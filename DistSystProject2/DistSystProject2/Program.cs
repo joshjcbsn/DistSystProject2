@@ -11,6 +11,7 @@ namespace DistSystProject2
         static void Main(string[] args)
         {
             var x = 1;
+            var y = 2;
         }
     }
 }
