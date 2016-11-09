@@ -6,6 +6,19 @@ using System.Threading.Tasks;
 
 namespace DistSystProject2
 {
+    public struct TCPConfig
+    {
+        public string dns;
+        public string ip;
+        public int port;
+        public TCPConfig(string DNS, string IP, int P)
+        {
+            dns = DNS;
+            ip = IP;
+            port = P;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
