@@ -14,6 +14,11 @@ namespace Server
         {
         }
 
+        /// <summary>
+        /// Reads message. Blocks calling thread until the message has been read
+        /// </summary>
+        /// <param name="client">TCP client recieving message</param>
+        /// <returns>message</returns>
         public string getMessage(TcpClient client)
         {
             try
@@ -41,5 +46,29 @@ namespace Server
             }    
         }
 
+        /// <summary>
+        /// Sends TCP message to address specified in config 
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="config"></param>
+        public void sendMessage(string msg, TCPConfig config)
+        {
+            try
+            {
+                using (TcpClient client = new TcpClient(config.dns, config.port))
+                {
+                    try
+                    {
+                        using (NetworkStream stream = client.GetStream())
+                        {
+                            byte[] msgBytes = Encoding.ASCII.GetBytes(msg);
+                            stream.Write(msgBytes, 0, msgBytes.Length);
+                        }
+                    }
+                    catch (Exception ex) { Console.WriteLine(ex.Message); }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+        }
     }
 }
