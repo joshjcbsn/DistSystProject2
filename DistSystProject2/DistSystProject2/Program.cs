@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DistSystProject2
+namespace Server
 {
     public struct TCPConfig
     {
@@ -23,8 +23,8 @@ namespace DistSystProject2
     {
         static void Main(string[] args)
         {
-            var x = 1;
-            var y = 2;
+            Console.WriteLine("test");
+            Console.Read();
         }
     }
 }
