@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,19 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("test");
-            Console.Read();
+            var n = Convert.ToInt32(args[0]);
+            Dictionary<int, TCPConfig> tcpConfig = new Dictionary<int, TCPConfig>();
+            using (StreamReader tcpReader = new StreamReader("tcp_config.txt"))
+            {
+
+                string line;
+                char[] comma = { ',' };
+                while ((line = tcpReader.ReadLine()) != null)
+                {
+                    string[] words = line.Split(comma);
+                    tcpConfig.Add(Convert.ToInt32(words[0]), new TCPConfig(words[1], words[2], Convert.ToInt32(words[3])));
+                }
+            }
         }
     }
 }
