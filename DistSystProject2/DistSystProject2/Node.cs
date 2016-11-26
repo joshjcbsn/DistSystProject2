@@ -56,11 +56,15 @@ namespace Server
                     Task newConnection = Task.Factory.StartNew(() => getConnections());
                     TCP t = new TCP(client);
                     var msg = t.getMessage();
-                  //  OnMsgEventArgs msgArgs = new OnMsgEventArgs(msg, t.getRemoteAddress());
+                    //  OnMsgEventArgs msgArgs = new OnMsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
                     msgHandler(msg, t.getRemoteAddress());
 
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
