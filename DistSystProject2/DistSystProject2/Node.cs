@@ -16,7 +16,7 @@ namespace Server
         public TCPConfig tcp; //tcp configuration of this node
         public TcpListener listener; //tcp listener for this node
 
-        public FileSystem files;
+
         /// <summary>
         /// Initiates server
         /// </summary>
@@ -25,12 +25,12 @@ namespace Server
         public Node(int N, TCPConfig TCP)
         {
 
-            files = new FileSystem();
+
             //set process number
             n = N;
             //set TCPConfig
             tcp = TCP;
-            //start listener        
+            //start listener, listening only on port in TCPConfig object
             try
             {
                 listener = new TcpListener(IPAddress.Any, tcp.port);
@@ -39,6 +39,10 @@ namespace Server
             catch (Exception ex) { Console.WriteLine(String.Format("error: {0}", ex.Message)); }
         }
 
+        /// <summary>
+        /// gets incoming connections on listener port
+        /// only the client should send connections on this port
+        /// </summary>
         public void getConnections()
         {
 
@@ -53,7 +57,7 @@ namespace Server
                     TCP t = new TCP(client);
                     var msg = t.getMessage();
                   //  OnMsgEventArgs msgArgs = new OnMsgEventArgs(msg, t.getRemoteAddress());
-                    //OnMsg(this, msgArgs);
+                    //Msg(this, msgArgs);
                     msgHandler(msg, t.getRemoteAddress());
 
                 }
@@ -63,33 +67,77 @@ namespace Server
         public void msgHandler(string msg, TCPConfig sender)
         {
             char[] space = {' '};
-            var commands = msg.Split(space);
+            var commands = msg.Split(space, 2);
             if (commands[0] == "CREATE")
             {
-                files.AddFile(commands[1]);
+                OnMsgEventArgs msgArgs = new OnMsgEventArgs(commands[1], sender);
+                OnCreate(msgArgs);
             }
             else if (commands[0] == "DELETE")
             {
-                files.DeleteFile(commands[1]);
+                OnMsgEventArgs msgArgs = new OnMsgEventArgs(commands[1], sender);
+                OnDelete(msgArgs);
             }
             else if (commands[0] == "READ")
             {
-                files.ReadFile(commands[1]);
+                OnMsgEventArgs msgArgs = new OnMsgEventArgs(commands[1], sender);
+                OnRead(msgArgs);
             }
             else if (commands[0] == "APPEND")
             {
-                files.AppendFile(commands[1], commands[2]);
+                OnMsgEventArgs msgArgs = new OnMsgEventArgs(commands[1], sender);
+                OnAppend(msgArgs);
             }
         }
 
         //message event
-        public event OnMsgHandler OnMsg;
+        public event OnMsgHandler Msg;
 
-        protected virtual void OnTcpMsg(OnMsgEventArgs e)
+        protected virtual void OnMsg(OnMsgEventArgs e)
         {
-            if (OnMsg != null)
+            if (Msg != null)
             {
-                OnMsg(this, e);
+                Msg(this, e);
+            }
+        }
+
+        public event OnMsgHandler Read;
+
+        protected virtual void OnRead(OnMsgEventArgs e)
+        {
+            if (Read != null)
+            {
+                Read(this, e);
+            }
+        }
+
+        public event OnMsgHandler Append;
+
+        protected virtual void OnAppend(OnMsgEventArgs e)
+        {
+            if (Append != null)
+            {
+                Append(this, e);
+            }
+        }
+
+        public event OnMsgHandler Delete;
+
+        protected virtual void OnDelete(OnMsgEventArgs e)
+        {
+            if (Delete != null)
+            {
+                Delete(this, e);
+            }
+        }
+
+        public event OnMsgHandler Create;
+
+        protected virtual void OnCreate(OnMsgEventArgs e)
+        {
+            if (Create != null)
+            {
+                Create(this, e);
             }
         }
 

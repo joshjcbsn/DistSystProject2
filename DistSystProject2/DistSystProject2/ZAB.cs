@@ -7,6 +7,7 @@ namespace Server
         public int epoch;
         public string phase;
         public bool leader;
+        public FileSystem files;
         public TCPConfig thisAddress;
         public Node thisNode;
         public Dictionary<int, TCPConfig> servers;
@@ -19,7 +20,7 @@ namespace Server
             leader = false;
             epoch = 0;
             phase = "election";
-
+            files = new FileSystem();
 
             thisAddress = servers[n];
 
