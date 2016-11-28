@@ -66,7 +66,7 @@ namespace Server
         /// </summary>
         /// <param name="msg"></param>
         /// <param name="config"></param>
-        public void sendMessage(string msg, TCPConfig config)
+        public void sendMessage(string msg)
         {
             try
             {

@@ -11,6 +11,17 @@ using System.Threading.Tasks;
 
 namespace Server
 {
+    public struct zxid
+    {
+        public int epoch;
+        public int counter;
+
+        public zxid(int e, int c)
+        {
+            epoch = e;
+            counter = c;
+        }
+    }
     public class Node
     {
         public int n; //server number
@@ -38,6 +49,25 @@ namespace Server
                 listener.Start();
             }
             catch (Exception ex) { Console.WriteLine(String.Format("error: {0}", ex.Message)); }
+        }
+
+        public void sendMsg(string msg, TCPConfig target)
+        {
+            try
+            {
+                string host = target.dns;
+                int portNum = target.port;
+                Console.WriteLine("Sending {0}", msg);
+                using (TcpClient client = new TcpClient(host, portNum))
+                {
+                    TCP t = new TCP(client);
+                    t.sendMessage(msg);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -71,6 +101,7 @@ namespace Server
                 Console.WriteLine(ex.Message);
             }
         }
+
 
         public void Recover(int i)
         {
@@ -113,6 +144,35 @@ namespace Server
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
                 OnAppend(msgArgs);
+            }
+            else if (commands[0] == "LOCK")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnLock(msgArgs);
+            }
+            else if (commands[0] == "UNLOCK")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnUnlock(msgArgs);
+            }
+            else if (commands[0] == "ELECTION")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnElection(msgArgs);
+            }
+            else if (commands[0] == "COORDINATOR")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnCoordinator(msgArgs);
+            }
+            else if (commands[0] == "OK")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnOk(msgArgs);
+            }
+            else if (commands[0] == "COMMIT")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
             }
         }
 
@@ -167,6 +227,84 @@ namespace Server
             }
         }
 
+        public event OnMsgHandler Lock;
+
+        protected virtual void OnLock(MsgEventArgs e)
+        {
+            if (Lock != null)
+            {
+                Lock(this, e);
+            }
+        }
+        public event OnMsgHandler Unlock;
+
+        protected virtual void OnUnlock(MsgEventArgs e)
+        {
+            if (Unlock != null)
+            {
+                Unlock(this, e);
+            }
+        }
+
+        public event OnMsgHandler Election;
+
+        protected virtual void OnElection(MsgEventArgs e)
+        {
+            if (Election != null)
+            {
+                Election(this, e);
+            }
+        }
+
+        public event OnMsgHandler Coordinator;
+
+        protected virtual void OnCoordinator(MsgEventArgs e)
+        {
+            if (Coordinator != null)
+            {
+                Coordinator(this, e);
+            }
+        }
+
+        public event OnMsgHandler Ok;
+
+        protected virtual void OnOk(MsgEventArgs e)
+        {
+            if (Ok != null)
+            {
+                Ok(this, e);
+            }
+        }
+
+        public event OnMsgHandler Proposal;
+
+        protected virtual void OnProposal(MsgEventArgs e)
+        {
+            if (Proposal != null)
+            {
+                Proposal(this, e);
+            }
+        }
+        public event OnMsgHandler Ack;
+
+        protected virtual void OnAck(MsgEventArgs e)
+        {
+            if (Ack != null)
+            {
+                Ack(this, e);
+            }
+        }
+
+        public event OnMsgHandler Commit;
+
+        protected virtual void OnCommit(MsgEventArgs e)
+        {
+            if (Commit != null)
+            {
+                Commit(this, e);
+            }
+        }
+
 
     }
     /// <summary>
@@ -192,5 +330,8 @@ namespace Server
             client = _client;
         }
     }
+
+
+
 
 }
