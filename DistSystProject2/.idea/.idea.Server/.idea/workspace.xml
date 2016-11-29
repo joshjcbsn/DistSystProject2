@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0af7d68-7a4c-41cf-8bd5-27aa0342da0f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/tcp_config.txt" afterPath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/tcp_config.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt" afterPath="$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt" />
     </list>
     <list id="84fe1825-0e59-44fa-bee6-dedbc01188fb" name="inactive" comment="" />
@@ -29,7 +28,7 @@
       <file leaf-file-name="Node.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../DistSystProject2/Node.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1870">
+            <state relative-caret-position="737">
               <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
               <folding>
                 <marker date="1480455980889" expanded="true" signature="7:254" ph="..." />
@@ -357,7 +356,7 @@
       <workItem from="1480453348698" duration="2242000" />
       <workItem from="1480455625695" duration="406000" />
       <workItem from="1480456065607" duration="754000" />
-      <workItem from="1480456872301" duration="148000" />
+      <workItem from="1480456872301" duration="555000" />
     </task>
     <task id="LOCAL-00001" summary="added some stuff to node">
       <created>1479403899255</created>
@@ -534,11 +533,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480456890292</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="private ports">
+      <created>1480457030320</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1480457030320</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93542000" />
+    <option name="totallyTimeSpent" value="93949000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -620,7 +626,8 @@
     <MESSAGE value="add prop" />
     <MESSAGE value="print some stuff" />
     <MESSAGE value="remove key" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove key" />
+    <MESSAGE value="private ports" />
+    <option name="LAST_COMMIT_MESSAGE" value="private ports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2058,47 +2065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../DistSystProject2/Node.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
-          <folding>
-            <marker date="1480455980889" expanded="true" signature="7:254" ph="..." />
-            <marker date="1480455980889" expanded="true" signature="272:10569" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="297:9842" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="481:654" ph="/// Initiates server ... " />
-            <marker date="1480455980889" expanded="true" signature="696:1178" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="1237:1742" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="1752:1908" ph="/// gets incoming connections on listener port ... " />
-            <marker date="1480455980889" expanded="true" signature="1945:2895" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="2486:2599" ph="/* MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress()); ... */" />
-            <marker date="1480455980889" expanded="true" signature="2897:3383" ph="/* public void Recover(int i) ... */" />
-            <marker date="1480455980889" expanded="true" signature="3444:6386" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="5788:6375" ph="/* else if (commands[0] == &quot;ELECTION&quot;) ... */" />
-            <marker date="1480455980889" expanded="true" signature="6504:6611" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="6707:6816" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="6916:7029" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="7129:7242" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="7342:7455" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="7551:7660" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="7759:7872" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="7976:8093" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="8203:8326" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="8418:8523" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="8627:8744" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="8837:8944" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="9044:9157" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="9264:9385" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="9494:9617" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="9719:9834" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="9847:10023" ph="/// Message event handler ... " />
-            <marker date="1480455980889" expanded="true" signature="10099:10268" ph="/// Creates class to store event arguments for the the message event ... " />
-            <marker date="1480455980889" expanded="true" signature="10310:10563" ph="{...}" />
-            <marker date="1480455980889" expanded="true" signature="10481:10557" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../DistSystProject2/ZAB.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2023">
@@ -2186,6 +2152,47 @@
             <marker date="1480220132560" expanded="true" signature="1989:2168" ph="/// Sends TCP message to address specified in config  ... " />
             <marker date="1480220132560" expanded="true" signature="2212:2578" ph="{...}" />
             <marker date="1480220132560" expanded="true" signature="2624:2678" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../DistSystProject2/Node.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+          <folding>
+            <marker date="1480455980889" expanded="true" signature="7:254" ph="..." />
+            <marker date="1480455980889" expanded="true" signature="272:10569" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="297:9842" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="481:654" ph="/// Initiates server ... " />
+            <marker date="1480455980889" expanded="true" signature="696:1178" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="1237:1742" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="1752:1908" ph="/// gets incoming connections on listener port ... " />
+            <marker date="1480455980889" expanded="true" signature="1945:2895" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="2486:2599" ph="/* MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress()); ... */" />
+            <marker date="1480455980889" expanded="true" signature="2897:3383" ph="/* public void Recover(int i) ... */" />
+            <marker date="1480455980889" expanded="true" signature="3444:6386" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="5788:6375" ph="/* else if (commands[0] == &quot;ELECTION&quot;) ... */" />
+            <marker date="1480455980889" expanded="true" signature="6504:6611" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="6707:6816" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="6916:7029" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="7129:7242" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="7342:7455" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="7551:7660" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="7759:7872" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="7976:8093" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="8203:8326" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="8418:8523" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="8627:8744" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="8837:8944" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="9044:9157" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="9264:9385" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="9494:9617" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="9719:9834" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="9847:10023" ph="/// Message event handler ... " />
+            <marker date="1480455980889" expanded="true" signature="10099:10268" ph="/// Creates class to store event arguments for the the message event ... " />
+            <marker date="1480455980889" expanded="true" signature="10310:10563" ph="{...}" />
+            <marker date="1480455980889" expanded="true" signature="10481:10557" ph="{...}" />
           </folding>
         </state>
       </provider>
