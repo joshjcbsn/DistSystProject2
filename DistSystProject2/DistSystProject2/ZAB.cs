@@ -67,7 +67,8 @@ namespace Server
             thisNode.Proposal += new OnMsgHandler(OnProposal);
             thisNode.GetHistory += new OnMsgHandler(OnGetHistory);
             thisNode.SendHistory += new OnMsgHandler(OnSendHistory);
-            Task socket = Task.Factory.StartNew(() => thisNode.getConnections());
+            thisNode.getConnections();
+           // Task socket = Task.Factory.StartNew(() => thisNode.getConnections());
           //  holdElection();
 
 
