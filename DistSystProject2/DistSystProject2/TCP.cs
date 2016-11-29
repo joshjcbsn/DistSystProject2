@@ -12,15 +12,13 @@ namespace Server
     public class TCP
     {
        // public TcpClient client;
-      //  public TCPConfig remoteAddress;
+        public TCPConfig remoteAddress;
         public TCP()
-        {\/*
+        {/*
             try
             {
                 client = _client;
-                IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint;
-                DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;
-                remoteAddress = new TCPConfig(dnsep.Host, ipep.Address.ToString(), ipep.Port);
+
             }
             catch (Exception ex)
             {
@@ -38,6 +36,9 @@ namespace Server
         {
             try
             {
+                IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint;
+                DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;
+                remoteAddress = new TCPConfig(dnsep.Host, ipep.Address.ToString(), ipep.Port);
                 byte[] bytes = new byte[1024];
                 string data = null;
                 Console.WriteLine("Connected");
@@ -70,6 +71,9 @@ namespace Server
         {
             try
             {
+                IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint;
+                DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;
+                remoteAddress = new TCPConfig(dnsep.Host, ipep.Address.ToString(), ipep.Port);
                 using (NetworkStream stream = client.GetStream())
                 {
                     byte[] msgBytes = Encoding.ASCII.GetBytes(msg);
@@ -79,10 +83,10 @@ namespace Server
             catch (Exception ex) { Console.WriteLine(ex.Message); }
         }
 
-/*
+
         public TCPConfig getRemoteAddress()
         {
             return remoteAddress;
-        }*/
+        }
     }
 }

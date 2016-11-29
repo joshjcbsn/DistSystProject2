@@ -56,8 +56,8 @@ namespace Server
                 Console.WriteLine("Sending {0}", msg);
                 using (TcpClient client = new TcpClient(host, portNum))
                 {
-                    TCP t = new TCP(client);
-                    t.sendTcpMessage(msg);
+                    TCP t = new TCP();
+                    t.sendTcpMessage(msg,client);
                 }
             }
             catch (Exception ex)
@@ -81,8 +81,8 @@ namespace Server
                 {
                     //start new instance to accept next connection
                     Task newConnection = Task.Factory.StartNew(() => getConnections());
-                    TCP t = new TCP(client);
-                    var msg = t.getMessage();
+                    TCP t = new TCP();
+                    var msg = t.getMessage(client);
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
                     Console.WriteLine("{0} from {1}", msg, t.getRemoteAddress().dns);
