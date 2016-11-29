@@ -260,7 +260,7 @@ namespace Server
         }
 
 
-        public void sendProposal(Proposal p, TCPConfig tcp)
+        private void sendProposal(Proposal p, TCPConfig tcp)
         {
             try
             {
