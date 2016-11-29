@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0af7d68-7a4c-41cf-8bd5-27aa0342da0f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/Server.exe" afterPath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/Server.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/Server.exe.mdb" afterPath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/Server.exe.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/obj/Debug/Server.exe" afterPath="$PROJECT_DIR$/../../DistSystProject2/obj/Debug/Server.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/obj/Debug/Server.exe.mdb" afterPath="$PROJECT_DIR$/../../DistSystProject2/obj/Debug/Server.exe.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/ZAB.cs" afterPath="$PROJECT_DIR$/../../DistSystProject2/ZAB.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/tcp_config.txt" afterPath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/tcp_config.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt" afterPath="$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt" />
     </list>
     <list id="84fe1825-0e59-44fa-bee6-dedbc01188fb" name="inactive" comment="" />
     <ignored path="Server.iws" />
@@ -72,20 +69,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tcp_config.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tcp_config.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+              <caret line="1" column="64" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZAB.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ZAB.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../DistSystProject2/ZAB.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="1207">
               <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
               <folding>
                 <marker date="1480456305749" expanded="true" signature="6:175" ph="..." />
@@ -199,7 +196,7 @@
       <file leaf-file-name="TCP.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../DistSystProject2/TCP.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="473">
               <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <marker date="1480220132560" expanded="true" signature="6:181" ph="..." />
@@ -234,9 +231,9 @@
         <option value="$PROJECT_DIR$/../../DistSystProject2/FileSystem.cs" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/TCP.cs" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/Program.cs" />
-        <option value="$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/Node.cs" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/ZAB.cs" />
+        <option value="$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt" />
       </list>
     </option>
   </component>
@@ -382,7 +379,7 @@
       <workItem from="1480447870198" duration="5187000" />
       <workItem from="1480453348698" duration="2242000" />
       <workItem from="1480455625695" duration="406000" />
-      <workItem from="1480456065607" duration="256000" />
+      <workItem from="1480456065607" duration="567000" />
     </task>
     <task id="LOCAL-00001" summary="added some stuff to node">
       <created>1479403899255</created>
@@ -531,11 +528,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480456123703</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="remove key">
+      <created>1480456331078</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1480456331078</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92896000" />
+    <option name="totallyTimeSpent" value="93207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -554,7 +558,7 @@
       <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16978776" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3415265" sideWeight="0.5052083" order="7" side_tool="true" content_ui="tabs" />
@@ -616,7 +620,8 @@
     <MESSAGE value="port 0" />
     <MESSAGE value="add prop" />
     <MESSAGE value="print some stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="print some stuff" />
+    <MESSAGE value="remove key" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove key" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2027,32 +2032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../DistSystProject2/TCP.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <marker date="1480220132560" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480220132560" expanded="true" signature="199:2686" ph="{...}" />
-            <marker date="1480220132560" expanded="true" signature="215:2684" ph="{...}" />
-            <marker date="1480220132560" expanded="true" signature="333:771" ph="{...}" />
-            <marker date="1480220132560" expanded="true" signature="781:1007" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480220132560" expanded="true" signature="1042:1979" ph="{...}" />
-            <marker date="1480220132560" expanded="true" signature="1989:2168" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480220132560" expanded="true" signature="2212:2578" ph="{...}" />
-            <marker date="1480220132560" expanded="true" signature="2624:2678" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../DistSystProject2/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -2130,7 +2109,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../DistSystProject2/ZAB.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="1207">
           <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
           <folding>
             <marker date="1480456305749" expanded="true" signature="6:175" ph="..." />
@@ -2199,6 +2178,32 @@
             <marker date="1480456305749" expanded="true" signature="23757:23828" ph="{...}" />
             <marker date="1480456305749" expanded="true" signature="23891:23941" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../DistSystProject2/TCP.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <marker date="1480220132560" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480220132560" expanded="true" signature="199:2686" ph="{...}" />
+            <marker date="1480220132560" expanded="true" signature="215:2684" ph="{...}" />
+            <marker date="1480220132560" expanded="true" signature="333:771" ph="{...}" />
+            <marker date="1480220132560" expanded="true" signature="781:1007" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480220132560" expanded="true" signature="1042:1979" ph="{...}" />
+            <marker date="1480220132560" expanded="true" signature="1989:2168" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480220132560" expanded="true" signature="2212:2578" ph="{...}" />
+            <marker date="1480220132560" expanded="true" signature="2624:2678" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="64" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
