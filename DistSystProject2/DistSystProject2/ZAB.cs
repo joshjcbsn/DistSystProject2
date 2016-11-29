@@ -86,6 +86,8 @@ namespace Server
         {
             phase = "election";
             //response = false;
+
+            Console.WriteLine("Holding election");
             Proposal election = new Proposal("election", new zxid(epoch,counter));
             proposals.Add(election, new List<TCPConfig>());
             proposals[election].Add(thisAddress);
@@ -104,8 +106,9 @@ namespace Server
                     }*/
                 }
             }
+            Console.WriteLine("waiting");
             Thread.Sleep(3000);
-
+            Console.WriteLine("waited");
             if (proposals[election].Count == 0)
             {
                 leader = n;

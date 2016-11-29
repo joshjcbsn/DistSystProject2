@@ -80,6 +80,7 @@ namespace Server
                     var msg = t.getMessage();
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
+                    Console.WriteLine("{0} from {1}", msg, t.getRemoteAddress().dns);
                     msgHandler(msg, t.getRemoteAddress());
 
                 }
