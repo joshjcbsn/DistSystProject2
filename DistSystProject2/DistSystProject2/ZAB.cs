@@ -119,6 +119,7 @@ namespace Server
                     if (s < n)
                     {
                         followers.Add(s);
+                        Console.WriteLine("test1");
                         sendProposal(coordinator,servers[s]);
                     }
                 }
@@ -272,7 +273,8 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+
+                Console.WriteLine("sendProposal {0}",ex.Message);
                 if (tcp == servers[leader])
                 {
                     holdElection();
