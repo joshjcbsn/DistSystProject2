@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Threading;
 
 namespace Server
 {
+
 
     public class ZAB
     {
@@ -13,13 +16,17 @@ namespace Server
         public int counter;
         public string phase;
         public int leader;
+        public TCPConfig mostCurrentServer;
+        public zxid lastId;
         public FileSystem files;
         public Dictionary<string, List<TCPConfig>> lockFiles;
         public TCPConfig thisAddress;
         public Node thisNode;
         public Dictionary<int, TCPConfig> servers;
         public HashSet<int> followers;
-        public Dictionary<string, int> proposals;
+        public Dictionary<Proposal, List<TCPConfig>> proposals;
+        public FileStream history;
+
 
         private bool response;
 
@@ -31,23 +38,35 @@ namespace Server
             leader = n;
             epoch = 0;
             counter = 0;
+
+
             files = new FileSystem();
             followers = new HashSet<int>();
-            proposals = new Dictionary<string, int>();
-            thisAddress = servers[n];
+            proposals = new Dictionary<Proposal, List<TCPConfig>>();
+            //history = new FileStream("history.txt", FileMode.CreateNew, FileAccess.ReadWrite);
 
+            thisAddress = servers[n];
+            thisNode = new Node(n,thisAddress);
+            mostCurrentServer = thisAddress;
             thisNode = new Node(n, thisAddress);
             thisNode.Create += new OnMsgHandler(OnCreate);
             thisNode.Delete += new OnMsgHandler(OnDelete);
             thisNode.Read += new OnMsgHandler(OnRead);
             thisNode.Append += new OnMsgHandler(OnAppend);
-            thisNode.Election += new OnMsgHandler(OnElection);
+          /*  thisNode.Election += new OnMsgHandler(OnElection);
             thisNode.Coordinator += new OnMsgHandler(OnCoordinator);
-            thisNode.Ok += new OnMsgHandler(OnOk);
+            thisNode.Ok += new OnMsgHandler(OnOk); */
             thisNode.Ack += new OnMsgHandler(OnAck);
             thisNode.Commit += new OnMsgHandler(OnCommit);
             thisNode.Lock += new OnMsgHandler(OnLock);
             thisNode.Unlock += new OnMsgHandler(OnUnlock);
+            thisNode.Proposal += new OnMsgHandler(OnProposal);
+            thisNode.GetHistory += new OnMsgHandler(OnGetHistory);
+            thisNode.SendHistory += new OnMsgHandler(OnSendHistory);
+            holdElection();
+
+
+
         }
 
         public void getConnections()
@@ -61,36 +80,40 @@ namespace Server
         public void holdElection()
         {
             phase = "election";
-            response = false;
+            //response = false;
+            Proposal election = new Proposal("election", new zxid(epoch,counter));
             foreach (int p in servers.Keys)
             {
                 if (p > n)
                 {
-                    using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port))
+
+                    sendProposal(election,servers[p]);
+                    /*using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port))
                     {
                         TCP t = new TCP(client);
                         t.sendMessage(String.Format("ELECTION {0} {1}", epoch, counter));
                         Console.WriteLine("sent ELECTION to process {0}", p);
 
-                    }
+                    }*/
                 }
             }
             Thread.Sleep(3000);
-            if (!(response))
+
+            if (proposals[election].Count == 0)
             {
                 leader = n;
+                Proposal coordinator = new Proposal(String.Format("coordinator {0}", n), new zxid(epoch, counter));
                 foreach (int s in servers.Keys)
                 {
                     if (s < n)
                     {
-                        using (TcpClient client = new TcpClient(servers[s].dns, servers[s].port))
-                        {
-                            TCP t = new TCP(client);
-                            t.sendMessage(String.Format("COORDINATOR {0}", n));
-                        }
+                        followers.Add(s);
+                        sendProposal(coordinator,servers[s]);
                     }
                 }
                 //end election
+                //Proposal discover = new Proposal("discover", new);
+              //  sendBroadcast();
 
             }
             else
@@ -110,9 +133,192 @@ namespace Server
         public void Recover()
         {
             holdElection();
-            thisNode.Recover(0);
+        }
+
+        public void Dicover(Proposal coord)
+        {
+            phase = "discover";
+            if (leader == n)
+            {
+                //leader
+                Func<bool> hasCoordQuorum = delegate() { return proposals[coord].Count > (followers.Count / 2); };
+                SpinWait.SpinUntil(hasCoordQuorum);
+                var e1 = epoch + 1;
+                Proposal newEpoch = new Proposal(String.Format("newepoch {0}", e1),new zxid(epoch,counter));
+                proposals.Add(newEpoch, new List<TCPConfig>());
+                foreach (var tcp in proposals[coord])
+                {
+                    sendProposal(newEpoch, tcp);
+                }
+
+
+                Func<bool> hasEpochQuorum = delegate() { return (proposals[newEpoch].Count == proposals[coord].Count); };
+                SpinWait.SpinUntil(hasEpochQuorum, 10000);
+                if (mostCurrentServer != thisAddress)
+                {
+                    sendMessage("gethistory", mostCurrentServer);
+                }
+
+
+
+
+            }
+
 
         }
+
+        private void OnGetHistory(object sender, MsgEventArgs e)
+        {
+            using (FileStream fHistory = new FileStream("history.txt", FileMode.Create, FileAccess.Write))
+            {
+                using (StreamWriter sHistory = new StreamWriter(fHistory))
+                {
+                    //overwrites proposal history
+                    sHistory.Write(e.data);
+                }
+            }
+        }
+         private void OnSendHistory(object sender, MsgEventArgs e)
+        {
+            using (FileStream fHistory = new FileStream("history.txt", FileMode.Open, FileAccess.Read))
+            {
+                using (StreamReader sHistory = new StreamReader(fHistory))
+                {
+                    var history = sHistory.ReadToEnd();
+                    sendMessage(String.Format("history {0}", history), e.client);
+
+                }
+
+
+            }
+        }
+
+        private void ExecuteHistory(object sender, MsgEventArgs e)
+        {
+            using (FileStream fHistory = new FileStream("history.txt", FileMode.OpenOrCreate, FileAccess.Read))
+            {
+                using (StreamReader sHistory = new StreamReader(fHistory))
+                {
+                    string line;
+                    while ((line = sHistory.ReadLine())!=null)
+                    {
+                        char[] space = {' '};
+                        string[] args = line.Split(space, 3);
+                        Proposal thisProp = new Proposal(args[2], new zxid(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
+                        if (thisProp.z > lastId)
+                        {
+                            ProposalHandler(thisProp, sender, e.client);
+                        }
+                    }
+                }
+            }
+        }
+        public void sendMessage(string msg, TCPConfig tcp)
+        {
+            try
+            {
+                using (TcpClient client = new TcpClient(tcp.dns, tcp.port))
+                {
+                    TCP t = new TCP(client);
+                    t.sendMessage(String.Format(msg);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        public void sendProposal(Proposal p, TCPConfig tcp)
+        {
+            try
+            {
+                using (TcpClient client = new TcpClient(tcp.dns, tcp.port))
+                {
+                    TCP t = new TCP(client);
+                    t.sendMessage(String.Format("proposal {0} {1} {2}", p.z.epoch, p.z.counter, p.v));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public Proposal sendBroadcast(string msg)
+        {
+            counter++;
+            lastId = new zxid(epoch, counter);
+            Proposal p = new Proposal(msg, new zxid(epoch, counter));
+            proposals.Add(p, new List<TCPConfig>());
+            foreach (int s in followers)
+            {
+                sendProposal(p,servers[s]);
+            }
+            return p;
+        }
+
+
+        public void sendAck(MsgEventArgs e)
+        {
+            sendMessage(String.Format("ack {0}", e.data), e.client);
+        }
+
+
+        public void OnProposal(object sender, MsgEventArgs e)
+        {
+            sendAck(e);
+            Proposal prop = parseProposal(e.data);
+
+
+
+        }
+
+        private void ProposalHandler(Proposal P, object sender, TCPConfig client)
+        {
+            char[] space = {' '};
+            string[] args = P.v.Split(space, 2);
+
+
+            if (args[0] == "election")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
+                OnElection(sender, msgArgs);
+            }
+            else if (args[0] == "coordinator")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
+                OnCoordinator(sender, msgArgs);
+            }
+            else if (args[0] == "newepoch")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
+                OnNewEpoch(sender, msgArgs);
+
+            }
+            else if (args[0] == "newleader")
+            {
+
+            }
+            else if (args[0] == "create")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
+                OnCreate(sender, msgArgs);
+            }
+            else if (args[0] == "append")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
+                OnAppend(sender, msgArgs);
+            }
+            else if (args[0] == "delete")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
+                OnDelete(sender, msgArgs);
+            }
+        }
+
         /// <summary>
         /// Handles create request
         /// </summary>
@@ -122,15 +328,29 @@ namespace Server
         {
             if (phase != "election")
             {
-                counter++;
+
+                using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
+                {
+                    TCP t = new TCP(client);
+                    t.sendMessage(String.Format("lock {0}", e.data));
+                }
+
                 if (leader == n)
                 {
-                    foreach (int p in followers)
-                    {
+                    counter++;
+                    Proposal create =  sendBroadcast(String.Format("create {0}", e.data));
 
+                }
+                else
+                {
+                    using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
+                    {
+                        TCP t = new TCP(client);
+                        t.sendMessage(String.Format("create {0}", e.data));
                     }
                 }
             }
+
 
             //create lock file
             //if follower
@@ -148,7 +368,6 @@ namespace Server
         /// <param name="e"></param>
         private void OnDelete(object sender, MsgEventArgs e)
         {
-            counter++;
         }
 
         /// <summary>
@@ -159,8 +378,18 @@ namespace Server
         private void OnRead(object sender, MsgEventArgs e)
         {
            //counter++;
-            Console.WriteLine(files.ReadFile(e.data));
-
+            try
+            {
+                using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
+                {
+                    TCP t = new TCP(client);
+                    t.sendMessage(files.ReadFile(e.data));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -180,10 +409,10 @@ namespace Server
         /// <param name="e"></param>
         private void OnElection(object sender, MsgEventArgs e)
         {
-            using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
+
+            if (phase != "election")
             {
-                TCP t = new TCP(client);
-                t.sendMessage(String.Format("OK {0}", n));
+                holdElection();
             }
         }
 
@@ -206,6 +435,21 @@ namespace Server
             }
         }
 
+        private void OnNewEpoch(object sender, MsgEventArgs e)
+        {
+            if (leader != n)
+            {
+                if (Convert.ToInt32(e.data) > epoch)
+                {
+                    epoch = Convert.ToInt32(e.data);
+                    sendAck(e);
+                    //go to synch
+                }
+
+            }
+        }
+
+
         /// <summary>
         /// handles Ok response
         /// </summary>
@@ -217,6 +461,8 @@ namespace Server
             followers.Add(Convert.ToInt32(e.data));
         }
 
+
+
         /// <summary>
         /// handles ack response
         /// </summary>
@@ -224,15 +470,24 @@ namespace Server
         /// <param name="e"></param>
         private void OnAck(object sender, MsgEventArgs e)
         {
-            proposals[e.data] += 1;
-            if (proposals[e.data] > (followers.Count / 2))
+            Proposal prop = parseProposal(e.data);
+
+            if (prop.z > lastId)
+            {
+                mostCurrentServer = e.client;
+            }
+            proposals[prop].Add(e.client);
+            if (proposals[prop].Count > (followers.Count / 2))
             {
                 foreach (int f in followers)
                 {
                     try
                     {
                         //send commit
-                         using
+                        using (TcpClient client = new TcpClient())
+                        {
+
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -249,6 +504,8 @@ namespace Server
         /// <param name="e"></param>
         private void OnCommit(object sender, MsgEventArgs e)
         {
+            Proposal prop = parseProposal(e.data);
+
             //stage for
         }
 
@@ -270,7 +527,7 @@ namespace Server
                         using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
                         {
                             TCP t = new TCP(client);
-                            t.sendMessage(String.Format("LOCK {0}", e.data));
+                            t.sendMessage(String.Format("lock {0}", e.data));
                         }
 
                     }
@@ -313,7 +570,7 @@ namespace Server
                         using (TcpClient client = new TcpClient(nextLock.dns, nextLock.port))
                         {
                             TCP t = new TCP(client);
-                            t.sendMessage(String.Format("LOCK {0}", e.data));
+                            t.sendMessage(String.Format("lock {0}", e.data));
                             lockFiles[e.data].RemoveAt(0);
                         }
 
@@ -339,7 +596,7 @@ namespace Server
                     using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
                     {
                         TCP t = new TCP(client);
-                        t.sendMessage(String.Format("UNLOCK {0}", e.data));
+                        t.sendMessage(String.Format("unlock {0}", e.data));
                     }
                 }
                 catch (Exception ex)
@@ -351,5 +608,73 @@ namespace Server
             }
 
         }
+
+        private Proposal parseProposal(string msg)
+        {
+            char[] space = {' '};
+            string[] args = msg.Split(space);
+            return new Proposal(args[2], new zxid(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
+        }
+    }
+    public struct zxid
+    {
+        public int epoch;
+        public int counter;
+
+        public zxid(int e, int c)
+        {
+            epoch = e;
+            counter = c;
+        }
+
+        public override bool Equals(Object o)
+        {
+            return ((o is zxid) && (this == (zxid) o));
+        }
+
+        public static bool operator ==(zxid a, zxid b)
+        {
+            return ((a.epoch == b.epoch) && (a.counter == b.counter));
+        }
+        public static bool operator !=(zxid a, zxid b)
+        {
+            return !(a == b);
+        }
+
+        public static bool operator <(zxid a, zxid b)
+        {
+            return ((a.epoch < b.epoch) ||
+                    (a.epoch == b.epoch && a.counter < b.counter));
+        }
+        public static bool operator >(zxid a, zxid b)
+        {
+            return ((a.epoch > b.epoch) ||
+                    (a.epoch == b.epoch && a.counter > b.counter));
+        }
+    }
+    public struct Proposal
+    {
+        public string v;
+        public zxid z;
+
+        public Proposal(string value, zxid id)
+        {
+            v = value;
+            z = id;
+        }
+        public override bool Equals(Object o)
+        {
+            return ((o is Proposal) && (this == (Proposal) o));
+        }
+
+        public static bool operator ==(Proposal a, Proposal b)
+        {
+            return ((a.v == b.v) && (a.z == b.z));
+        }
+        public static bool operator !=(Proposal a, Proposal b)
+        {
+            return !(a == b);
+        }
+
     }
 }

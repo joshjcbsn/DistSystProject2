@@ -11,23 +11,13 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public struct zxid
-    {
-        public int epoch;
-        public int counter;
 
-        public zxid(int e, int c)
-        {
-            epoch = e;
-            counter = c;
-        }
-    }
     public class Node
     {
         public int n; //server number
         public TCPConfig tcp; //tcp configuration of this node
         public TcpListener listener; //tcp listener for this node
-        public FileStream history;
+
 
         /// <summary>
         /// Initiates server
@@ -37,7 +27,7 @@ namespace Server
         public Node(int N, TCPConfig TCP)
         {
 
-            history = new FileStream("history.txt", FileMode.CreateNew, FileAccess.ReadWrite);
+
             //set process number
             n = N;
             //set TCPConfig
@@ -90,10 +80,7 @@ namespace Server
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
                     msgHandler(msg, t.getRemoteAddress());
-                    using (StreamWriter wHistory = new StreamWriter(history))
-                    {
-                        wHistory.WriteLine(msg);
-                    }
+
                 }
             }
             catch (Exception ex)
@@ -102,7 +89,7 @@ namespace Server
             }
         }
 
-
+/*
         public void Recover(int i)
         {
             using (StreamReader rHistory = new StreamReader(history))
@@ -120,60 +107,84 @@ namespace Server
                 }
             }
         }
-
+*/
         public void msgHandler(string msg, TCPConfig sender)
         {
             char[] space = {' '};
             var commands = msg.Split(space, 2);
-            if (commands[0] == "CREATE")
+            if (commands[0] == "create")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
                 OnCreate(msgArgs);
             }
-            else if (commands[0] == "DELETE")
+            else if (commands[0] == "delete")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
                 OnDelete(msgArgs);
             }
-            else if (commands[0] == "READ")
+            else if (commands[0] == "read")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
                 OnRead(msgArgs);
             }
-            else if (commands[0] == "APPEND")
+            else if (commands[0] == "append")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
                 OnAppend(msgArgs);
             }
-            else if (commands[0] == "LOCK")
+            else if (commands[0] == "lock")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
                 OnLock(msgArgs);
             }
-            else if (commands[0] == "UNLOCK")
+            else if (commands[0] == "unlock")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
                 OnUnlock(msgArgs);
             }
-            else if (commands[0] == "ELECTION")
+            else if (commands[0] == "proposal")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
-                OnElection(msgArgs);
+                OnProposal(msgArgs);
             }
-            else if (commands[0] == "COORDINATOR")
+            else if (commands[0] == "ack")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
-                OnCoordinator(msgArgs);
+                OnAck(msgArgs);
             }
-            else if (commands[0] == "OK")
+            else if (commands[0] == "commit")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
-                OnOk(msgArgs);
+                OnCommit(msgArgs);
             }
-            else if (commands[0] == "COMMIT")
+            else if (commands[0] == "history")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnGetHistory(msgArgs);
             }
+            else if (commands[0] == "gethistory")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnSendHistory(msgArgs);
+            }
+
+            /* else if (commands[0] == "ELECTION")
+             {
+                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                 OnElection(msgArgs);
+             }
+             else if (commands[0] == "COORDINATOR")
+             {
+                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                 OnCoordinator(msgArgs);
+             }
+             else if (commands[0] == "OK")
+             {
+                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                 OnOk(msgArgs);
+             }
+             */
+
         }
 
         //message event
@@ -302,6 +313,24 @@ namespace Server
             if (Commit != null)
             {
                 Commit(this, e);
+            }
+        }
+        public event OnMsgHandler GetHistory;
+
+        protected virtual void OnGetHistory(MsgEventArgs e)
+        {
+            if (GetHistory != null)
+            {
+                GetHistory(this, e);
+            }
+        }
+        public event OnMsgHandler SendHistory;
+
+        protected virtual void OnSendHistory(MsgEventArgs e)
+        {
+            if (SendHistory != null)
+            {
+                SendHistory(this, e);
             }
         }
 

@@ -18,6 +18,16 @@ namespace Server
             ip = IP;
             port = P;
         }
+
+        public static bool operator ==(TCPConfig a, TCPConfig b)
+        {
+            return ((a.dns == b.dns) && (a.ip == b.ip) && (a.port == b.port));
+        }
+
+        public static bool operator !=(TCPConfig a, TCPConfig b)
+        {
+            return (!(a == b));
+        }
     }
 
     class Program
