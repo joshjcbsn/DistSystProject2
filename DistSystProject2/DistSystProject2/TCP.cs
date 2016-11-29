@@ -11,7 +11,7 @@ namespace Server
 {
     public class TCP
     {
-        private TcpClient client;
+        public TcpClient client;
         public TCPConfig remoteAddress;
         public TCP(TcpClient _client)
         {
