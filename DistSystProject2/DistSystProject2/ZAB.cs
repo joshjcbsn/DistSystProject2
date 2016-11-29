@@ -100,7 +100,7 @@ namespace Server
                     /*using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port))
                     {
                         TCP t = new TCP(client);
-                        t.sendMessage(String.Format("ELECTION {0} {1}", epoch, counter));
+                        t.sendTcpMessage(String.Format("ELECTION {0} {1}", epoch, counter));
                         Console.WriteLine("sent ELECTION to process {0}", p);
 
                     }*/
@@ -244,7 +244,7 @@ namespace Server
                 using (TcpClient client = new TcpClient(tcp.dns, tcp.port))
                 {
                     TCP t = new TCP(client);
-                    t.sendMessage(msg);
+                    t.sendTcpMessage(msg);
                     Console.WriteLine("Sent message {0} to {1}", msg, tcp.dns);
 
                 }
@@ -268,7 +268,7 @@ namespace Server
                 {
                     TCP t = new TCP(client);
                     var text = String.Format("proposal {0} {1} {2}", p.z.epoch, p.z.counter, p.v);
-                    t.sendMessage(text);
+                    t.sendTcpMessage(text);
                     Console.WriteLine("Sent proposal ({0}, {1}, '{2}') to {3}", p.z.epoch, p.z.counter, p.v, tcp.dns);
                 }
             }
@@ -431,7 +431,7 @@ namespace Server
                 using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
                 {
                     TCP t = new TCP(client);
-                    t.sendMessage(files.ReadFile(e.data));
+                    t.sendTcpMessage(files.ReadFile(e.data));
                 }
             }
             catch (Exception ex)
@@ -587,7 +587,7 @@ namespace Server
                 using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
                 {
                     TCP t = new TCP(client);
-                    t.sendMessage(String.Format("lock {0}", filename));
+                    t.sendTcpMessage(String.Format("lock {0}", filename));
                 }
             }
             catch (Exception ex)
@@ -602,7 +602,7 @@ namespace Server
                 using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
                 {
                     TCP t = new TCP(client);
-                    t.sendMessage(String.Format("unlock {0}", filename));
+                    t.sendTcpMessage(String.Format("unlock {0}", filename));
                 }
             }
             catch (Exception ex)
@@ -629,7 +629,7 @@ namespace Server
                         using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
                         {
                             TCP t = new TCP(client);
-                            t.sendMessage(String.Format("lock {0}", e.data));
+                            t.sendTcpMessage(String.Format("lock {0}", e.data));
                         }
 
                     }
@@ -672,7 +672,7 @@ namespace Server
                         using (TcpClient client = new TcpClient(nextLock.dns, nextLock.port))
                         {
                             TCP t = new TCP(client);
-                            t.sendMessage(String.Format("lock {0}", e.data));
+                            t.sendTcpMessage(String.Format("lock {0}", e.data));
                             lockFiles[e.data].RemoveAt(0);
                         }
 
@@ -698,7 +698,7 @@ namespace Server
                     using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
                     {
                         TCP t = new TCP(client);
-                        t.sendMessage(String.Format("unlock {0}", e.data));
+                        t.sendTcpMessage(String.Format("unlock {0}", e.data));
                     }
                 }
                 catch (Exception ex)

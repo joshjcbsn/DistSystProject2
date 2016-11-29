@@ -57,7 +57,7 @@ namespace Server
                 using (TcpClient client = new TcpClient(host, portNum))
                 {
                     TCP t = new TCP(client);
-                    t.sendMessage(msg);
+                    t.sendTcpMessage(msg);
                 }
             }
             catch (Exception ex)

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    class TCP
+    public class TCP
     {
         private TcpClient client;
         public TCPConfig remoteAddress;
@@ -66,7 +66,7 @@ namespace Server
         /// </summary>
         /// <param name="msg"></param>
         /// <param name="config"></param>
-        public void sendMessage(string msg)
+        public void sendTcpMessage(string msg)
         {
             try
             {
