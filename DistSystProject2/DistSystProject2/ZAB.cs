@@ -87,6 +87,8 @@ namespace Server
             phase = "election";
             //response = false;
             Proposal election = new Proposal("election", new zxid(epoch,counter));
+            proposals.Add(election, new List<TCPConfig>());
+            proposals[election].Add(thisAddress);
             foreach (int p in servers.Keys)
             {
                 if (p > n)
@@ -281,6 +283,7 @@ namespace Server
                 lastId = new zxid(epoch, counter);
                 Proposal p = new Proposal(msg, new zxid(epoch, counter));
                 proposals.Add(p, new List<TCPConfig>());
+                proposals[p].Add(thisAddress);
                 AppendHistory(p);
                 foreach (int s in followers)
                 {
