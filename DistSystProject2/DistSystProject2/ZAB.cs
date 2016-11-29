@@ -275,7 +275,7 @@ namespace Server
             catch (Exception ex)
             {
 
-                Console.WriteLine("sendProposal {0}",ex.Message);
+                Console.WriteLine("sendProposal {0} {1}",ex.Message, ex.Source);
                 if (tcp == servers[leader])
                 {
                     holdElection();
