@@ -37,6 +37,7 @@ namespace Server
             try
             {
                 listener = new TcpListener(IPAddress.Any, tcp.port);
+                listener.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, 1);
                 listener.Start();
             }
             catch (Exception ex)
