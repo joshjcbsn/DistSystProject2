@@ -107,9 +107,10 @@ namespace Server
                 }
             }
             Console.WriteLine("waiting");
-            Thread.Sleep(3000);
+            Func<bool> hasAck = delegate() { return (proposals[election].Count > 1); };
+            SpinWait.SpinUntil(hasAck, 5000);
             Console.WriteLine("waited");
-            if (proposals[election].Count == 0)
+            if (proposals[election].Count > 1)
             {
                 leader = n;
                 Proposal coordinator = new Proposal(String.Format("coordinator {0}", n), new zxid(epoch, counter));
