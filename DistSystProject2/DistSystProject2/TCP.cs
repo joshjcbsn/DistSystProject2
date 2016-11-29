@@ -11,10 +11,10 @@ namespace Server
 {
     public class TCP
     {
-        public TcpClient client;
-        public TCPConfig remoteAddress;
-        public TCP(TcpClient _client)
-        {
+       // public TcpClient client;
+      //  public TCPConfig remoteAddress;
+        public TCP()
+        {\/*
             try
             {
                 client = _client;
@@ -25,7 +25,7 @@ namespace Server
             catch (Exception ex)
             {
                 throw ex;
-            }
+            }*/
 
         }
 
@@ -34,7 +34,7 @@ namespace Server
         /// </summary>
         /// <param name="client">TCP client recieving message</param>
         /// <returns>message</returns>
-        public string getMessage()
+        public string getMessage(TcpClient client)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace Server
         /// </summary>
         /// <param name="msg"></param>
         /// <param name="config"></param>
-        public void sendTcpMessage(string msg)
+        public void sendTcpMessage(string msg, TcpClient client)
         {
             try
             {
@@ -79,10 +79,10 @@ namespace Server
             catch (Exception ex) { Console.WriteLine(ex.Message); }
         }
 
-
+/*
         public TCPConfig getRemoteAddress()
         {
             return remoteAddress;
-        }
+        }*/
     }
 }
