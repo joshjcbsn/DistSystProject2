@@ -133,6 +133,7 @@ namespace Server
                 //OnCoordinator handles changes if coord message is recieved
                 if (!(response))
                 {
+                    proposals.Remove(election);
                     holdElection();
                 }
             }
