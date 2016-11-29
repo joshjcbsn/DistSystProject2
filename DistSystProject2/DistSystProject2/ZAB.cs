@@ -237,7 +237,7 @@ namespace Server
                 }
             }
         }
-        public void sendMessage(string msg, TCPConfig tcp)
+        private void sendMessage(string msg, TCPConfig tcp)
         {
             try
             {
@@ -267,7 +267,7 @@ namespace Server
                 using (TcpClient client = new TcpClient(tcp.dns, tcp.port))
                 {
                     TCP t = new TCP(client);
-                    var text = String.Format("proposal {0} {1} {2}", p.z.epoch, p.z.counter, p.v)
+                    var text = String.Format("proposal {0} {1} {2}", p.z.epoch, p.z.counter, p.v);
                     t.sendMessage(text);
                     Console.WriteLine("Sent proposal ({0}, {1}, '{2}') to {3}", p.z.epoch, p.z.counter, p.v, tcp.dns);
                 }
