@@ -32,6 +32,7 @@ namespace Server
             n = N;
             //set TCPConfig
             tcp = TCP;
+            Console.WriteLine(tcp.dns);
             //start listener, listening only on port in TCPConfig object
             try
             {
