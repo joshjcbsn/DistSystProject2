@@ -51,7 +51,6 @@ namespace Server
             Console.WriteLine(thisAddress.dns);
             thisNode = new Node(n,thisAddress);
             mostCurrentServer = thisAddress;
-            thisNode = new Node(n, thisAddress);
             thisNode.Connect += new OnMsgHandler(OnConnect);
             thisNode.Create += new OnMsgHandler(OnCreate);
             thisNode.Delete += new OnMsgHandler(OnDelete);
