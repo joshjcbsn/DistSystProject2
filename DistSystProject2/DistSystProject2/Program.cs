@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class TCPConfig
+    public struct TCPConfig
     {
         public string dns;
         public string ip;

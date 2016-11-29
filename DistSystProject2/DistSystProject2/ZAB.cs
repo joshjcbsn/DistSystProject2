@@ -260,7 +260,7 @@ namespace Server
         }
 
 
-        private void sendProposal(Proposal p, TCPConfig tcp)
+        public void sendProposal(Proposal p, TCPConfig tcp)
         {
             try
             {
@@ -717,6 +717,7 @@ namespace Server
             string[] args = msg.Split(space);
             return new Proposal(args[2], new zxid(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
         }
+
     }
     public struct zxid
     {
