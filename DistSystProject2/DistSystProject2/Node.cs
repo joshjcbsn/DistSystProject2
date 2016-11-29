@@ -39,7 +39,11 @@ namespace Server
                 listener = new TcpListener(IPAddress.Any, tcp.port);
                 listener.Start();
             }
-            catch (Exception ex) { Console.WriteLine(String.Format("error: {0}", ex.Message)); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(String.Format("error: {0}", ex.Message));
+
+            }
         }
 
         public void sendMsg(string msg, TCPConfig target)
@@ -82,6 +86,7 @@ namespace Server
                     //Msg(this, msgArgs);
                     Console.WriteLine("{0} from {1}", msg, t.getRemoteAddress().dns);
                     msgHandler(msg, t.getRemoteAddress());
+                    client.Close();
 
                 }
             }
