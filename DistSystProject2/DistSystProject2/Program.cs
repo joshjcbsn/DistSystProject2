@@ -52,8 +52,8 @@ namespace Server
                 }
             }
             ZAB zk = new ZAB(n, tcpConfig);
-            Console.Read();
-            zk.holdElection();
+          //  Console.Read();
+          //  zk.holdElection();
         }
     }
 }
