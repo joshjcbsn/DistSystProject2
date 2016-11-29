@@ -167,6 +167,11 @@ namespace Server
                 MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
                 OnSendHistory(msgArgs);
             }
+            else if (commands[0] == "connect")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(null, sender);
+                OnConnect(msgArgs);
+            }
 
             /* else if (commands[0] == "ELECTION")
              {
@@ -331,6 +336,16 @@ namespace Server
             if (SendHistory != null)
             {
                 SendHistory(this, e);
+            }
+        }
+
+        public event OnMsgHandler Connect;
+
+        protected virtual void OnConnect(MsgEventArgs e)
+        {
+            if (Connect != null)
+            {
+                Connect(this, e);
             }
         }
 

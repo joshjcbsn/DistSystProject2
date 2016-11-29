@@ -34,19 +34,24 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            var n = Convert.ToInt32(args[0]);
+            Console.WriteLine("Enter server number:");
+            var n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(n);
             Dictionary<int, TCPConfig> tcpConfig = new Dictionary<int, TCPConfig>();
             using (StreamReader tcpReader = new StreamReader("tcp_config.txt"))
             {
 
                 string line;
+
                 char[] comma = { ',' };
                 while ((line = tcpReader.ReadLine()) != null)
                 {
+                    Console.WriteLine(line);
                     string[] words = line.Split(comma);
                     tcpConfig.Add(Convert.ToInt32(words[0]), new TCPConfig(words[1], words[2], Convert.ToInt32(words[3])));
                 }
             }
+            ZAB zk = new ZAB(n, tcpConfig);
         }
     }
 }

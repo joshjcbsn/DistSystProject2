@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Server
 {
@@ -32,8 +33,8 @@ namespace Server
 
         public ZAB(int N, Dictionary<int, TCPConfig> S)
         {
-            n = n;
-            servers = S;
+            n = N;
+            servers = new Dictionary<int, TCPConfig>(S);
             leader = n;
             epoch = 0;
             counter = 0;
@@ -48,6 +49,7 @@ namespace Server
             thisNode = new Node(n,thisAddress);
             mostCurrentServer = thisAddress;
             thisNode = new Node(n, thisAddress);
+            thisNode.Connect += new OnMsgHandler(OnConnect);
             thisNode.Create += new OnMsgHandler(OnCreate);
             thisNode.Delete += new OnMsgHandler(OnDelete);
             thisNode.Read += new OnMsgHandler(OnRead);
@@ -62,6 +64,7 @@ namespace Server
             thisNode.Proposal += new OnMsgHandler(OnProposal);
             thisNode.GetHistory += new OnMsgHandler(OnGetHistory);
             thisNode.SendHistory += new OnMsgHandler(OnSendHistory);
+            Task socket = Task.Factory.StartNew(() => thisNode.getConnections());
             holdElection();
 
 
@@ -295,8 +298,12 @@ namespace Server
             sendMessage(String.Format("ack {0}", e.data), e.client);
         }
 
+        private void OnConnect(object sender, MsgEventArgs e)
+        {
+            sendAck(e);
+        }
 
-        public void OnProposal(object sender, MsgEventArgs e)
+        private void OnProposal(object sender, MsgEventArgs e)
         {
             sendAck(e);
             Proposal prop = parseProposal(e.data);
