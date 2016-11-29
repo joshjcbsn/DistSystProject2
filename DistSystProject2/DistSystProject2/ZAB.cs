@@ -25,7 +25,6 @@ namespace Server
         public Dictionary<int, TCPConfig> servers;
         public HashSet<int> followers;
         public Dictionary<Proposal, List<TCPConfig>> proposals;
-        public FileStream history;
 
 
         private bool response;
@@ -167,6 +166,17 @@ namespace Server
 
         }
 
+        private void AppendHistory(Proposal prop)
+        {
+            using (FileStream fHistory = new FileStream("history.txt", FileMode.Append, FileAccess.Write))
+            {
+                using (StreamWriter sHistory = new StreamWriter(fHistory))
+                {
+                    sHistory.WriteLine("{0} {1} {2}", prop.z.epoch, prop.z.counter, prop.v);
+                }
+            }
+        }
+
         private void OnGetHistory(object sender, MsgEventArgs e)
         {
             using (FileStream fHistory = new FileStream("history.txt", FileMode.Create, FileAccess.Write))
@@ -220,13 +230,18 @@ namespace Server
                 using (TcpClient client = new TcpClient(tcp.dns, tcp.port))
                 {
                     TCP t = new TCP(client);
-                    t.sendMessage(String.Format(msg);
+                    t.sendMessage(msg);
+                    Console.WriteLine("Sent message {0} to {1}", msg, tcp.dns);
 
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                if (tcp == servers[leader])
+                {
+                    holdElection();
+                }
             }
         }
 
@@ -239,25 +254,39 @@ namespace Server
                 {
                     TCP t = new TCP(client);
                     t.sendMessage(String.Format("proposal {0} {1} {2}", p.z.epoch, p.z.counter, p.v));
+                    Console.WriteLine("Sent proposal ({0}, {1}, '{2}') to {3}", p.z.epoch, p.z.counter, p.v, tcp.dns);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                if (tcp == servers[leader])
+                {
+                    holdElection();
+                }
             }
         }
 
         public Proposal sendBroadcast(string msg)
         {
-            counter++;
-            lastId = new zxid(epoch, counter);
-            Proposal p = new Proposal(msg, new zxid(epoch, counter));
-            proposals.Add(p, new List<TCPConfig>());
-            foreach (int s in followers)
+            if (phase == "broadcast")
             {
-                sendProposal(p,servers[s]);
+                counter++;
+                lastId = new zxid(epoch, counter);
+                Proposal p = new Proposal(msg, new zxid(epoch, counter));
+                proposals.Add(p, new List<TCPConfig>());
+                AppendHistory(p);
+                foreach (int s in followers)
+                {
+                    sendProposal(p, servers[s]);
+                }
+                return p;
             }
-            return p;
+            else
+            {
+                throw (new Exception("not broadcasting"));
+            }
+
         }
 
 
@@ -280,6 +309,7 @@ namespace Server
         {
             char[] space = {' '};
             string[] args = P.v.Split(space, 2);
+            Console.WriteLine("handling proposal {(0}, {1}, {2})", P.z.epoch, P.z.counter, P.v);
 
 
             if (args[0] == "election")
@@ -329,11 +359,7 @@ namespace Server
             if (phase != "election")
             {
 
-                using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
-                {
-                    TCP t = new TCP(client);
-                    t.sendMessage(String.Format("lock {0}", e.data));
-                }
+
 
                 if (leader == n)
                 {
@@ -343,11 +369,12 @@ namespace Server
                 }
                 else
                 {
-                    using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
-                    {
-                        TCP t = new TCP(client);
-                        t.sendMessage(String.Format("create {0}", e.data));
-                    }
+                    LockFile(e.data);
+
+                    sendMessage(String.Format("create {0}", e.data), servers[leader]);
+
+
+
                 }
             }
 
@@ -497,6 +524,29 @@ namespace Server
             }
         }
 
+        private void Deliver(MsgEventArgs e)
+        {
+            char[] space = {' '};
+            string[] args = e.data.Split(space, 2);
+            if (args[0] == "create")
+            {
+                files.AddFile(args[1]);
+                sendMessage(String.Format("Created file '{0}'", args[1]), e.client);
+            }
+            else if (args[0] == "append")
+            {
+                string[] fileargs = args[1].Split(space, 2);
+                files.AppendFile(fileargs[0], fileargs[1]);
+                sendMessage(String.Format("Appended '{0}' to file '{1}'", fileargs[0], fileargs[1]), e.client);
+            }
+            else if (args[0] == "delete")
+            {
+                files.DeleteFile(args[1]);
+                sendMessage(String.Format("Deleted file {0}", args[1]), e.client);
+            }
+
+        }
+
         /// <summary>
         /// handles commit proposal
         /// </summary>
@@ -504,9 +554,40 @@ namespace Server
         /// <param name="e"></param>
         private void OnCommit(object sender, MsgEventArgs e)
         {
-            Proposal prop = parseProposal(e.data);
+            //Proposal prop = parseProposal(e.data);
 
             //stage for
+        }
+
+        private void LockFile(string filename)
+        {
+            try
+            {
+                using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
+                {
+                    TCP t = new TCP(client);
+                    t.sendMessage(String.Format("lock {0}", filename));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private void UnlockFile(string filename)
+        {
+            try
+            {
+                using (TcpClient client = new TcpClient(servers[leader].dns, servers[leader].port))
+                {
+                    TCP t = new TCP(client);
+                    t.sendMessage(String.Format("unlock {0}", filename));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
