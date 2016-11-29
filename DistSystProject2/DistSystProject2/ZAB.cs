@@ -754,7 +754,7 @@ namespace Server
                     (a.epoch == b.epoch && a.counter > b.counter));
         }
     }
-    public struct Proposal
+    public class Proposal
     {
         public string v;
         public zxid z;
