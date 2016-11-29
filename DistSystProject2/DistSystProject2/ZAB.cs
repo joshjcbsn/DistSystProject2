@@ -44,8 +44,11 @@ namespace Server
             followers = new HashSet<int>();
             proposals = new Dictionary<Proposal, List<TCPConfig>>();
             //history = new FileStream("history.txt", FileMode.CreateNew, FileAccess.ReadWrite);
+            Console.WriteLine(n);
+
 
             thisAddress = servers[n];
+            Console.WriteLine(thisAddress.dns);
             thisNode = new Node(n,thisAddress);
             mostCurrentServer = thisAddress;
             thisNode = new Node(n, thisAddress);
