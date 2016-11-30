@@ -82,12 +82,11 @@ namespace Server
                     //start new instance to accept next connection
                     Task newConnection = Task.Factory.StartNew(() => getConnections());
                     TCP t = new TCP();
-                    EndPoint ep = client.Client.RemoteEndPoint;
-                    EndPoint ep2 = client.Client.RemoteEndPoint;
-                    DnsEndPoint dnsep = (DnsEndPoint) ep;
-                    IPEndPoint ipep = (IPEndPoint) ep2;
+                    //EndPoint ep2 = client.Client.RemoteEndPoint;
+                    DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;;
+                   // IPEndPoint ipep = (IPEndPoint) ep2;
 
-                    TCPConfig remoteAddress = new TCPConfig(dnsep.Host, ipep.Address.ToString(), ipep.Port);
+                    TCPConfig remoteAddress = new TCPConfig(dnsep.Host, tcp.ip, dnsep.Port);
                     var msg = t.getMessage(client.GetStream());
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
