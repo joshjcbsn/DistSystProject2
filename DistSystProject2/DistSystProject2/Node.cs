@@ -196,6 +196,16 @@ namespace Server
                 MsgEventArgs msgArgs = new MsgEventArgs(null, sender);
                 OnConnect(msgArgs);
             }
+            else if (commands[0] == "getzxid")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnGetZxid(msgArgs);
+            }
+            else if (commands[0] == "zxid")
+            {
+                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                OnZxid(msgArgs);
+            }
 
             /* else if (commands[0] == "ELECTION")
              {
@@ -370,6 +380,25 @@ namespace Server
             if (Connect != null)
             {
                 Connect(this, e);
+            }
+        }
+
+        public event OnMsgHandler GetZxid;
+
+        protected virtual void OnGetZxid(MsgEventArgs e)
+        {
+            if (GetZxid != null)
+            {
+                GetZxid(this, e);
+            }
+        }
+        public event OnMsgHandler Zxid;
+
+        protected virtual void OnZxid(MsgEventArgs e)
+        {
+            if (Zxid != null)
+            {
+                Zxid(this, e);
             }
         }
 

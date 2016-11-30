@@ -27,6 +27,7 @@ namespace Server
         public Dictionary<int, TCPConfig> servers;
         public HashSet<int> followers;
         public Dictionary<Proposal, List<TCPConfig>> proposals;
+        public Dictionary<int, zxid> ServerIds;
 
 
         private bool response;
@@ -72,8 +73,13 @@ namespace Server
             thisNode.Proposal += new OnMsgHandler(OnProposal);
             thisNode.GetHistory += new OnMsgHandler(OnGetHistory);
             thisNode.SendHistory += new OnMsgHandler(OnSendHistory);
+            thisNode.GetZxid += new OnMsgHandler(OnGetZxid);
+            thisNode.Zxid += new OnMsgHandler(OnZxid);
            // thisNode.getConnections();
             Task socket = Task.Factory.StartNew(() => thisNode.getConnections());
+            ServerIds = new Dictionary<int, zxid>();
+            getZxids();
+
             holdElection();
 
 
@@ -92,14 +98,14 @@ namespace Server
         {
             phase = "election";
             //response = false;
-
+            getZxids();
             Console.WriteLine("Holding election");
             Proposal election = new Proposal("election", new zxid(epoch,counter));
             proposals.Add(election, new List<TCPConfig>());
             proposals[election].Add(thisAddress);
-            foreach (int p in servers.Keys)
+            foreach (int p in ServerIds.Keys)
             {
-                if (p > n)
+                if (ServerIds[p] > ServerIds[n])
                 {
 
                     sendProposal(election,servers[p]);
@@ -113,16 +119,16 @@ namespace Server
                 }
             }
             Console.WriteLine("waiting");
-            Func<bool> hasAck = delegate() { return (proposals[election].Count > 1); };
+            Func<bool> hasAck = delegate() { return (proposals[election].Count == servers.Count); };
             SpinWait.SpinUntil(hasAck, 5000);
             Console.WriteLine("waited");
             if (proposals[election].Count == 1)
             {
                 leader = n;
                 Proposal coordinator = new Proposal(String.Format("coordinator {0}", n), new zxid(epoch, counter));
-                foreach (int s in servers.Keys)
+                foreach (int s in ServerIds.Keys)
                 {
-                    if (s < n)
+                    if (ServerIds[s] < ServerIds[n])
                     {
                         followers.Add(s);
                         Console.WriteLine("test1");
@@ -138,7 +144,7 @@ namespace Server
             {
                 response = false;
                 Func<bool> hasCoord = delegate() { return response; };
-                SpinWait.SpinUntil(hasAck, 5000);
+                SpinWait.SpinUntil(hasCoord, 5000);
                 //OnCoordinator handles changes if coord message is recieved
                 if (!(response))
                 {
@@ -382,6 +388,28 @@ namespace Server
                 MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
                 OnDelete(sender, msgArgs);
             }
+        }
+
+        private void getZxids()
+        {
+            ServerIds[n] = new zxid(epoch, counter);
+            foreach (TCPConfig s in servers.Values)
+            {
+                sendMessage("getzxid",s);
+            }
+            Func<bool> hasIds = delegate() { return ServerIds.Count == servers.Count; };
+            SpinWait.SpinUntil(hasIds, 5000);
+        }
+
+        private void OnGetZxid(object sender, MsgEventArgs e)
+        {
+            sendMessage(String.Format("zxid {0} {1} {2}", n, epoch, counter), e.client);
+        }
+        private void OnZxid(object sender, MsgEventArgs e)
+        {
+            char[] space = {' '};
+            string[] args = e.data.Split(space);
+            ServerIds[Convert.ToInt32(args[0])] = new zxid(Convert.ToInt32(args[1]), Convert.ToInt32(args[2]));
         }
 
         /// <summary>
