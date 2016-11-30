@@ -93,7 +93,7 @@ namespace Server
 
                    // IPEndPoint ipep = (IPEndPoint) ep2;
 
-                    TCPConfig remoteAddress = new TCPConfig(dnsHost, ipep.ToString(), port);
+                    TCPConfig remoteAddress = new TCPConfig(dnsHost, ipep.Address.ToString(), port);
                     var msg = t.getMessage(client.GetStream());
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
