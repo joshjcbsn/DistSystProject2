@@ -57,7 +57,7 @@ namespace Server
                 using (TcpClient client = new TcpClient(host, portNum))
                 {
                     TCP t = new TCP();
-                    t.sendTcpMessage(msg,client);
+                    t.sendTcpMessage(msg,client.GetStream());
                 }
             }
             catch (Exception ex)
@@ -82,11 +82,14 @@ namespace Server
                     //start new instance to accept next connection
                     Task newConnection = Task.Factory.StartNew(() => getConnections());
                     TCP t = new TCP();
-                    var msg = t.getMessage(client);
+                    var msg = t.getMessage(client.GetStream());
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
-                    Console.WriteLine("{0} from {1}", msg, t.getRemoteAddress().dns);
-                    msgHandler(msg, t.getRemoteAddress());
+                    IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint;
+                    DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;
+                    TCPConfig remoteAddress = new TCPConfig(dnsep.Host, ipep.Address.ToString(), ipep.Port);
+                   // Console.WriteLine("{0} from {1}", msg, t.getRemoteAddress().dns);
+                    msgHandler(msg, remoteAddress);
                     client.Close();
 
                 }

@@ -32,17 +32,19 @@ namespace Server
         /// </summary>
         /// <param name="client">TCP client recieving message</param>
         /// <returns>message</returns>
-        public string getMessage(TcpClient client)
+        public string getMessage(NetworkStream stream)
         {
             try
             {
+                /*
                 IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint;
                 DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;
                 remoteAddress = new TCPConfig(dnsep.Host, ipep.Address.ToString(), ipep.Port);
+
+                NetworkStream stream = client.GetStream();*/
                 byte[] bytes = new byte[1024];
                 string data = null;
                 Console.WriteLine("Connected");
-                NetworkStream stream = client.GetStream();
                 int i;
                 // Loop to receive all the data sent by the client.
                 i = stream.Read(bytes, 0, bytes.Length);
@@ -68,14 +70,16 @@ namespace Server
         /// </summary>
         /// <param name="msg"></param>
         /// <param name="config"></param>
-        public void sendTcpMessage(string msg, TcpClient client)
+        public void sendTcpMessage(string msg, NetworkStream stream)
         {
             try
             {
+                /*
                 IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint;
                 DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;
                 remoteAddress = new TCPConfig(dnsep.Host, ipep.Address.ToString(), ipep.Port);
-                using (NetworkStream stream = client.GetStream())
+                using (NetworkStream stream = client.GetStream())*/
+                using (stream)
                 {
                     byte[] msgBytes = Encoding.ASCII.GetBytes(msg);
                     stream.Write(msgBytes, 0, msgBytes.Length);
@@ -87,10 +91,10 @@ namespace Server
             }
         }
 
-
+/*
         public TCPConfig getRemoteAddress()
         {
             return remoteAddress;
-        }
+        }*/
     }
 }
