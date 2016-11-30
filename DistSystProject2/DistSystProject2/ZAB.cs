@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq.Expressions;
+using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
@@ -38,8 +39,11 @@ namespace Server
             leader = n;
             epoch = 0;
             counter = 0;
-
-
+            Dictionary<string, string> addrs = new Dictionary<string, string>();
+            foreach (var tcp in servers.Values)
+            {
+                addrs.Add(tcp.ip, tcp.dns);
+            }
             files = new FileSystem();
             followers = new HashSet<int>();
             proposals = new Dictionary<Proposal, List<TCPConfig>>();
@@ -51,7 +55,7 @@ namespace Server
 
             thisAddress = servers[n];
             Console.WriteLine(thisAddress.dns);
-            thisNode = new Node(n,thisAddress);
+            thisNode = new Node(n,thisAddress, addrs);
             mostCurrentServer = thisAddress;
             thisNode.Connect += new OnMsgHandler(OnConnect);
             thisNode.Create += new OnMsgHandler(OnCreate);

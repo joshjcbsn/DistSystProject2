@@ -17,17 +17,17 @@ namespace Server
         public int n; //server number
         public TCPConfig tcp; //tcp configuration of this node
         public TcpListener listener; //tcp listener for this node
-
+        public Dictionary<string, string> servers;
 
         /// <summary>
         /// Initiates server
         /// </summary>
         /// <param name="N">server number</param>
         /// <param name="TCP">tcp connection info</param>
-        public Node(int N, TCPConfig TCP)
+        public Node(int N, TCPConfig TCP, Dictionary<string,string> S)
         {
 
-
+            servers = new Dictionary<string, string>(S);
             //set process number
             n = N;
             //set TCPConfig
@@ -84,18 +84,16 @@ namespace Server
                     //start new instance to accept next connection
                     Task newConnection = Task.Factory.StartNew(() => getConnections());
                     var ipep = (IPEndPoint) client.Client.RemoteEndPoint;
-                    var ipAddr = ipep.Address;
-                    var port = ipep.Port;
-                    var hostEntry = Dns.GetHostEntry(ipAddr);
+                    var ipAddr = ipep.Address.ToString();
 
-                    var dnsHost = hostEntry.HostName;
-                    dnsHost = dnsHost.Replace("internal", "amazonaws.com");
+                    var dnsHost = servers[ipAddr];
+                   // dnsHost = dnsHost.Replace("internal", "amazonaws.com");
                     TCP t = new TCP();
                     //EndPoint ep2 = client.Client.RemoteEndPoint;
 
                    // IPEndPoint ipep = (IPEndPoint) ep2;
 
-                    TCPConfig remoteAddress = new TCPConfig(dnsHost, ipep.Address.ToString(), port);
+                    TCPConfig remoteAddress = new TCPConfig(dnsHost, ipAddr, ipep.Port);
                     var msg = t.getMessage(client.GetStream());
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
