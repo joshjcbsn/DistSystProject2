@@ -230,7 +230,8 @@ namespace Server
             Console.WriteLine("synch");
             if (leader == n)
             {
-                Proposal newlead = new Proposal(String.Format("newleader {0} {1}", epoch, n), new zxid(epoch,counter));
+                var e1 = epoch + 1;
+                Proposal newlead = new Proposal(String.Format("newleader {0} {1}", e1, n), new zxid(epoch,counter));
                 proposals.Remove(newlead);
                 proposals.Add(newlead, new List<TCPConfig>());
                 proposals[newlead].Add(thisAddress);
@@ -238,6 +239,9 @@ namespace Server
                 {
                     sendProposal(newlead,servers[tcp]);
                 }
+                Func<bool> isLeader = delegate() { return proposals[newlead].Count > (ServerIds.Count / 2); };
+                SpinWait.SpinUntil(isLeader);
+                epoch++;
 
             }
         }
