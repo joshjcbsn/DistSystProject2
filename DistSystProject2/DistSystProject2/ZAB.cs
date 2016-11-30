@@ -328,9 +328,10 @@ namespace Server
 
         private void OnProposal(object sender, MsgEventArgs e)
         {
+            sendAck(e);
             Proposal prop = parseProposal(e.data);
             ProposalHandler(prop, sender, e.client);
-            sendAck(e);
+
 
 
 
@@ -470,7 +471,7 @@ namespace Server
         /// <param name="e"></param>
         private void OnElection(object sender, MsgEventArgs e)
         {
-            sendAck(e);
+
             if (phase != "election")
             {
                 holdElection();
