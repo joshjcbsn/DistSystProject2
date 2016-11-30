@@ -143,7 +143,7 @@ namespace Server
                 proposals.Remove(coordinator);
                 proposals.Add(coordinator, new List<TCPConfig>());
                 proposals[coordinator].Add(thisAddress);
-                Dicover(coordinator);
+                Dicover();
                 //end election
                 //Proposal discover = new Proposal("discover", new);
               //  sendBroadcast();
@@ -170,24 +170,25 @@ namespace Server
             holdElection();
         }
 
-        public void Dicover(Proposal coord)
+        public void Dicover()
         {
+            getZxids();
             phase = "discover";
             if (leader == n)
             {
                 //leader
-                Func<bool> hasCoordQuorum = delegate() { return proposals[coord].Count > (followers.Count / 2); };
-                SpinWait.SpinUntil(hasCoordQuorum);
+                Func<bool> hasZxidQuorum = delegate() { return ServerIds.Count > (followers.Count / 2); };
+                SpinWait.SpinUntil(hasZxidQuorum);
                 var e1 = epoch + 1;
                 Proposal newEpoch = new Proposal(String.Format("newepoch {0}", e1),new zxid(epoch,counter));
                 proposals.Add(newEpoch, new List<TCPConfig>());
-                foreach (var tcp in proposals[coord])
+                foreach (var tcp in ServerIds.Keys)
                 {
-                    sendProposal(newEpoch, tcp);
+                    sendProposal(newEpoch, servers[tcp]);
                 }
 
 
-                Func<bool> hasEpochQuorum = delegate() { return (proposals[newEpoch].Count == proposals[coord].Count); };
+                Func<bool> hasEpochQuorum = delegate() { return (proposals[newEpoch].Count == ServerIds.Count); };
                 SpinWait.SpinUntil(hasEpochQuorum, 10000);
                 if (mostCurrentServer != thisAddress)
                 {
@@ -414,7 +415,11 @@ namespace Server
             foreach (int s in servers.Keys)
             {
                 if (s != n)
+                {
+                    ServerIds.Remove(s);
                     sendMessage("getzxid",servers[s]);
+                }
+
             }
             Func<bool> hasIds = delegate() { return ServerIds.Count == servers.Count; };
             SpinWait.SpinUntil(hasIds, 5000);
@@ -428,7 +433,7 @@ namespace Server
         {
             char[] space = {' '};
             string[] args = e.data.Split(space);
-            ServerIds.Remove(Convert.ToInt32(args[0]));
+
             ServerIds.Add(Convert.ToInt32(args[0]), new zxid(Convert.ToInt32(args[1]), Convert.ToInt32(args[2])));
 
         }
@@ -543,8 +548,10 @@ namespace Server
             }
             else
             {
+
                 leader = Convert.ToInt32(e.data);
-                Dicover(parseProposal(e.data));
+                Console.WriteLine("Elected leader");
+                Dicover();
             }
         }
 
