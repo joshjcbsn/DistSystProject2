@@ -194,6 +194,10 @@ namespace Server
                 {
                     sendMessage("gethistory", mostCurrentServer);
                 }
+                else
+                {
+                    Synch();
+                }
 
 
 
@@ -203,6 +207,22 @@ namespace Server
 
         }
 
+        private void Synch()
+        {
+            phase = "synch";
+            if (leader == n)
+            {
+                Proposal newlead = new Proposal(String.Format("newleader {0}", epoch), new zxid(epoch,counter));
+                proposals.Remove(newlead);
+                proposals.Add(newlead, new List<TCPConfig>());
+                proposals[newlead].Add(thisAddress);
+                foreach (var tcp in ServerIds.Keys)
+                {
+                    sendProposal(newlead,servers[tcp]);
+                }
+
+            }
+        }
         private void AppendHistory(Proposal prop)
         {
             using (FileStream fHistory = new FileStream("history.txt", FileMode.Append, FileAccess.Write))
@@ -212,6 +232,7 @@ namespace Server
                     sHistory.WriteLine("{0} {1} {2}", prop.z.epoch, prop.z.counter, prop.v);
                 }
             }
+
         }
 
         private void OnGetHistory(object sender, MsgEventArgs e)
@@ -224,6 +245,7 @@ namespace Server
                     sHistory.Write(e.data);
                 }
             }
+            ExecuteHistory(sender, e);
         }
          private void OnSendHistory(object sender, MsgEventArgs e)
         {
@@ -353,9 +375,12 @@ namespace Server
 
         private void OnProposal(object sender, MsgEventArgs e)
         {
-            sendAck(e);
+
             Proposal prop = parseProposal(e.data);
-            ProposalHandler(prop, sender, e.client);
+            if (ProposalHandler(prop, sender, e.client))
+            {
+                sendAck(e);
+            }
 
 
 
@@ -364,7 +389,7 @@ namespace Server
 
         }
 
-        private void ProposalHandler(Proposal P, object sender, TCPConfig client)
+        private bool ProposalHandler(Proposal P, object sender, TCPConfig client)
         {
             char[] space = {' '};
             string[] args = P.v.Split(space, 2);
@@ -375,37 +400,46 @@ namespace Server
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(null, client);
                 OnElection(sender, msgArgs);
+                return true;
             }
             else if (args[0] == "coordinator")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
-                OnCoordinator(sender, msgArgs);
+                return OnCoordinator(sender, msgArgs);
+
             }
             else if (args[0] == "newepoch")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
-                OnNewEpoch(sender, msgArgs);
+
+                return OnNewEpoch(sender, msgArgs);;
 
             }
             else if (args[0] == "newleader")
             {
+                MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
+                return OnNewLeader(sender, msgArgs);
 
             }
             else if (args[0] == "create")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
                 OnCreate(sender, msgArgs);
+                return true;
             }
             else if (args[0] == "append")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
                 OnAppend(sender, msgArgs);
+                return true;
             }
             else if (args[0] == "delete")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
                 OnDelete(sender, msgArgs);
+                return true;
             }
+            return false;
         }
 
         private void getZxids()
@@ -538,13 +572,14 @@ namespace Server
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnCoordinator(object sender, MsgEventArgs e)
+        private bool OnCoordinator(object sender, MsgEventArgs e)
         {
             response = true;
             if ((n > Convert.ToInt32(e.data)) &&
                 (phase != "election"))
             {
                 holdElection();
+                return false;
             }
             else
             {
@@ -552,21 +587,45 @@ namespace Server
                 leader = Convert.ToInt32(e.data);
                 Console.WriteLine("Elected leader");
                 Dicover();
+                return true;
             }
         }
 
-        private void OnNewEpoch(object sender, MsgEventArgs e)
+        private bool OnNewEpoch(object sender, MsgEventArgs e)
         {
             if (leader != n)
             {
-                if (Convert.ToInt32(e.data) > epoch)
+                if (Convert.ToInt32(e.data) >= epoch)
                 {
                     epoch = Convert.ToInt32(e.data);
                     sendAck(e);
+                    return true;
                     //go to synch
+                }
+                else
+                {
+
+                    holdElection();
+                    return true;
                 }
 
             }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool OnNewLeader(object sender, MsgEventArgs e)
+        {
+            if (Convert.ToInt32(e.data) == epoch)
+            {
+                sendMessage("gethistory", servers[leader]);
+                return true;
+            }
+            holdElection();
+            return false;
+
         }
 
 
