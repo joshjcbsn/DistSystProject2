@@ -85,6 +85,7 @@ namespace Server
                     Task newConnection = Task.Factory.StartNew(() => getConnections());
                     var ipep = (IPEndPoint) client.Client.RemoteEndPoint;
                     var ipAddr = ipep.Address.ToString();
+                    Console.WriteLine(ipAddr);
 
                     var dnsHost = servers[ipAddr];
                    // dnsHost = dnsHost.Replace("internal", "amazonaws.com");
