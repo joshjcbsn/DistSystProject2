@@ -205,8 +205,9 @@ namespace Server
             }
             else
             {
-                var currentEpoch = epoch;
-                Func<bool> waitforEpoch = delegate () { return currentEpoch != epoch; };
+                //var currentEpoch = epoch;
+                Func<bool> waitforSynch = delegate () { return phase != "discover"; };
+                SpinWait.SpinUntil(waitforSynch);
             }
 
 
@@ -603,6 +604,7 @@ namespace Server
                 {
                     epoch = Convert.ToInt32(e.data);
                     sendAck(e);
+                    Synch();
                     return true;
                     //go to synch
                 }
