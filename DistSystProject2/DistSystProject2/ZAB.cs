@@ -136,6 +136,7 @@ namespace Server
                         sendProposal(coordinator,servers[s]);
                     }
                 }
+                proposals.Add(coordinator, new List<TCPConfig>());
                 proposals[coordinator].Add(thisAddress);
                 Dicover(coordinator);
                 //end election
