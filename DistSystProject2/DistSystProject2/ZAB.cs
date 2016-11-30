@@ -321,8 +321,11 @@ namespace Server
 
         private void OnProposal(object sender, MsgEventArgs e)
         {
-            sendAck(e);
             Proposal prop = parseProposal(e.data);
+            ProposalHandler(prop, sender, e.client);
+            sendAck(e);
+
+
 
 
 
