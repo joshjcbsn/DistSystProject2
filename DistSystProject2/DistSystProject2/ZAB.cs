@@ -594,6 +594,7 @@ namespace Server
         /// <param name="e"></param>
         private bool OnCoordinator(object sender, MsgEventArgs e)
         {
+            Console.WriteLine("coordinator");
             response = true;
             var s = Convert.ToInt32(e.data);
             ServerIds.Remove(s);
