@@ -595,8 +595,13 @@ namespace Server
         private bool OnCoordinator(object sender, MsgEventArgs e)
         {
             response = true;
-            getZxids();
-            if ((ServerIds[n] > ServerIds[Convert.ToInt32(e.data)]) &&
+            var s = Convert.ToInt32(e.data);
+            ServerIds.Remove(s);
+            sendMessage("getzxid",servers[s]);
+            Func<bool> hasId = delegate() { return ServerIds.ContainsKey(s); };
+            SpinWait.SpinUntil(hasId);
+
+            if ((ServerIds[n] > ServerIds[s]) &&
                 (phase != "election"))
             {
                 holdElection();
@@ -605,7 +610,7 @@ namespace Server
             else
             {
 
-                leader = Convert.ToInt32(e.data);
+                leader = s;
                 Console.WriteLine("Elected leader");
                 phase = "discover";
                 return true;
