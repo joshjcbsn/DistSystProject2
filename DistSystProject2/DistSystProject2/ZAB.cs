@@ -110,6 +110,7 @@ namespace Server
                     (ServerIds[p] == ServerIds[n] && p > n))
                 {
 
+
                     sendProposal(election,servers[p]);
                     /*using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port))
                     {
@@ -288,6 +289,7 @@ namespace Server
 
         public void sendProposal(Proposal p, TCPConfig tcp)
         {
+            Console.WriteLine("Sending proposal {0} {1} {2}", p.z.epoch, p.z.counter, p.v);
             try
             {
                 using (TcpClient client = new TcpClient(tcp.dns, tcp.port))
