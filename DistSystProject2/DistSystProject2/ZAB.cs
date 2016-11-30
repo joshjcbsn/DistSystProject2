@@ -129,7 +129,9 @@ namespace Server
             {
                 leader = n;
                 Proposal coordinator = new Proposal(String.Format("coordinator {0}", n), new zxid(epoch, counter));
-
+                proposals.Remove(coordinator);
+                proposals.Add(coordinator, new List<TCPConfig>());
+                proposals[coordinator].Add(thisAddress);
                 foreach (int s in ServerIds.Keys)
                 {
                     if ((ServerIds[s] < ServerIds[n]) ||
@@ -140,9 +142,7 @@ namespace Server
                         sendProposal(coordinator,servers[s]);
                     }
                 }
-                proposals.Remove(coordinator);
-                proposals.Add(coordinator, new List<TCPConfig>());
-                proposals[coordinator].Add(thisAddress);
+
                 Discover();
                 //end election
                 //Proposal discover = new Proposal("discover", new);
@@ -573,7 +573,7 @@ namespace Server
         /// <param name="e"></param>
         private bool OnElection(object sender, MsgEventArgs e)
         {
-            getZxids();
+           // getZxids();
 
             if (phase != "election")
             {
@@ -614,6 +614,7 @@ namespace Server
                 leader = s;
                 Console.WriteLine("Elected leader");
                 phase = "discover";
+                Discover();
                 return true;
             }
         }
