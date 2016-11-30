@@ -100,8 +100,9 @@ namespace Server
                     //Msg(this, msgArgs);
 
                    // Console.WriteLine("{0} from {1}", msg, t.getRemoteAddress().dns);
-                    msgHandler(msg, remoteAddress);
                     client.Close();
+                    msgHandler(msg, remoteAddress);
+
 
                 }
             }
