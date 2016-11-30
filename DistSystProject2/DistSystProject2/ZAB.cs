@@ -39,10 +39,10 @@ namespace Server
             leader = n;
             epoch = 0;
             counter = 0;
-            Dictionary<string, string> addrs = new Dictionary<string, string>();
+            Dictionary<string, TCPConfig> addrs = new Dictionary<string, TCPConfig>();
             foreach (var tcp in servers.Values)
             {
-                addrs.Add(tcp.ip, tcp.dns);
+                addrs.Add(tcp.ip, tcp);
             }
             files = new FileSystem();
             followers = new HashSet<int>();

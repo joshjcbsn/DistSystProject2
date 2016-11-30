@@ -17,17 +17,17 @@ namespace Server
         public int n; //server number
         public TCPConfig tcp; //tcp configuration of this node
         public TcpListener listener; //tcp listener for this node
-        public Dictionary<string, string> servers;
+        public Dictionary<string, TCPConfig> servers;
 
         /// <summary>
         /// Initiates server
         /// </summary>
         /// <param name="N">server number</param>
         /// <param name="TCP">tcp connection info</param>
-        public Node(int N, TCPConfig TCP, Dictionary<string,string> S)
+        public Node(int N, TCPConfig TCP, Dictionary<string,TCPConfig> S)
         {
 
-            servers = new Dictionary<string, string>(S);
+            servers = new Dictionary<string, TCPConfig>(S);
             //set process number
             n = N;
             //set TCPConfig
@@ -87,14 +87,15 @@ namespace Server
                     var ipAddr = ipep.Address.ToString();
                     Console.WriteLine(ipAddr);
 
-                    var dnsHost = servers[ipAddr];
+                    var dnsHost = servers[ipAddr].dns;
+                    var port = servers[ipAddr].port;
                    // dnsHost = dnsHost.Replace("internal", "amazonaws.com");
                     TCP t = new TCP();
                     //EndPoint ep2 = client.Client.RemoteEndPoint;
 
                    // IPEndPoint ipep = (IPEndPoint) ep2;
 
-                    TCPConfig remoteAddress = new TCPConfig(dnsHost, ipAddr, ipep.Port);
+                    TCPConfig remoteAddress = new TCPConfig(dnsHost, ipAddr, port);
                     var msg = t.getMessage(client.GetStream());
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
