@@ -36,7 +36,7 @@ namespace Server
         {
             n = N;
             servers = new Dictionary<int, TCPConfig>(S);
-            leader = n;
+            leader = 0;
             epoch = 0;
             counter = 0;
             Dictionary<string, TCPConfig> addrs = new Dictionary<string, TCPConfig>();
@@ -116,7 +116,7 @@ namespace Server
             Func<bool> hasAck = delegate() { return (proposals[election].Count > 1); };
             SpinWait.SpinUntil(hasAck, 5000);
             Console.WriteLine("waited");
-            if (proposals[election].Count > 1)
+            if (proposals[election].Count == 1)
             {
                 leader = n;
                 Proposal coordinator = new Proposal(String.Format("coordinator {0}", n), new zxid(epoch, counter));
@@ -495,6 +495,7 @@ namespace Server
             else
             {
                 leader = Convert.ToInt32(e.data);
+                Dicover(parseProposal(e.data));
             }
         }
 
