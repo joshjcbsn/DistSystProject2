@@ -139,6 +139,7 @@ namespace Server
                         sendProposal(coordinator,servers[s]);
                     }
                 }
+                proposals.Remove(coordinator);
                 proposals.Add(coordinator, new List<TCPConfig>());
                 proposals[coordinator].Add(thisAddress);
                 Dicover(coordinator);
