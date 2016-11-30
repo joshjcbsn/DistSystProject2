@@ -126,6 +126,7 @@ namespace Server
             {
                 leader = n;
                 Proposal coordinator = new Proposal(String.Format("coordinator {0}", n), new zxid(epoch, counter));
+
                 foreach (int s in ServerIds.Keys)
                 {
                     if (ServerIds[s] < ServerIds[n])
@@ -135,6 +136,7 @@ namespace Server
                         sendProposal(coordinator,servers[s]);
                     }
                 }
+                proposals[coordinator].Add(thisAddress);
                 Dicover(coordinator);
                 //end election
                 //Proposal discover = new Proposal("discover", new);
