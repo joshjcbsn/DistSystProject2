@@ -205,7 +205,8 @@ namespace Server
             }
             else
             {
-
+                var currentEpoch = epoch;
+                Func<bool> waitforEpoch = delegate () { return currentEpoch != epoch; };
             }
 
 
@@ -708,10 +709,15 @@ namespace Server
             Proposal prop = parseProposal(e.data);
             char[] space = {' '};
             string[] args = prop.v.Split(space, 2);
+            Console.WriteLine("Commiting {0}", args[0]);
             if (args[0] == "newleader")
             {
-                ExecuteHistory(sender,e);
+                ExecuteHistory(sender, e);
                 phase = "broadcast";
+            }
+            else
+            {
+                Deliver(e);
             }
 
             //stage for
