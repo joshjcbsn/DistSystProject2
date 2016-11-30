@@ -198,7 +198,7 @@ namespace Server
             }
             else if (commands[0] == "getzxid")
             {
-                MsgEventArgs msgArgs = new MsgEventArgs(commands[1], sender);
+                MsgEventArgs msgArgs = new MsgEventArgs(null, sender);
                 OnGetZxid(msgArgs);
             }
             else if (commands[0] == "zxid")
