@@ -531,6 +531,7 @@ namespace Server
         /// <param name="e"></param>
         private void OnAck(object sender, MsgEventArgs e)
         {
+
             Proposal prop = parseProposal(e.data);
 
             if (prop.z > lastId)
@@ -538,6 +539,7 @@ namespace Server
                 mostCurrentServer = e.client;
             }
             proposals[prop].Add(e.client);
+            Console.WriteLine("got ack {0}", proposals[prop].Count);
             if (proposals[prop].Count > (followers.Count / 2))
             {
                 foreach (int f in followers)
