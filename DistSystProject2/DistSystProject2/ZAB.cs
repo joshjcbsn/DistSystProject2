@@ -78,6 +78,7 @@ namespace Server
            // thisNode.getConnections();
             Task socket = Task.Factory.StartNew(() => thisNode.getConnections());
             ServerIds = new Dictionary<int, zxid>();
+            Thread.Sleep(3000);
             getZxids();
 
             holdElection();
