@@ -535,19 +535,8 @@ namespace Server
             {
                 foreach (int f in followers)
                 {
-                    try
-                    {
-                        //send commit
-                        using (TcpClient client = new TcpClient())
-                        {
+                    sendMessage(String.Format("commit {0}", e.data), servers[f]);
 
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("OnAck {0} {1}",ex.Message, ex.StackTrace);
-
-                    }
                 }
             }
         }
