@@ -58,7 +58,8 @@ namespace Server
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                Console.WriteLine("sendMessage {0} {1}",ex.Message,ex.StackTrace);
+                return null;
             }    
         }
 
@@ -80,7 +81,10 @@ namespace Server
                     stream.Write(msgBytes, 0, msgBytes.Length);
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex)
+            {
+                Console.WriteLine("sendMessage {0} {1}",ex.Message,ex.StackTrace);
+            }
         }
 
 

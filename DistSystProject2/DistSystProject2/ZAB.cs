@@ -45,6 +45,8 @@ namespace Server
             proposals = new Dictionary<Proposal, List<TCPConfig>>();
             //history = new FileStream("history.txt", FileMode.CreateNew, FileAccess.ReadWrite);
             Console.WriteLine(n);
+            FileStream hist = new FileStream("history.txt", FileMode.OpenOrCreate);
+            hist.Close();
 
 
             thisAddress = servers[n];
