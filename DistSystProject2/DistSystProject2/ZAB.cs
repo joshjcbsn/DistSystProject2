@@ -604,11 +604,11 @@ namespace Server
             Console.WriteLine("coordinator");
             response = true;
             var s = Convert.ToInt32(e.data);
-            ServerIds.Remove(s);
+            /*ServerIds.Remove(s);
             sendMessage("getzxid",servers[s]);
             Func<bool> hasId = delegate() { return ServerIds.ContainsKey(s); };
             SpinWait.SpinUntil(hasId);
-            Console.WriteLine("got id");
+            Console.WriteLine("got id");*/
             if ((ServerIds[n] > ServerIds[s]) &&
                 (phase != "election"))
             {
