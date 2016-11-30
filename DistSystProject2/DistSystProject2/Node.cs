@@ -79,14 +79,17 @@ namespace Server
                 Console.WriteLine("Waiting for connection");
                 using (TcpClient client = listener.AcceptTcpClient())
                 {
+                    DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;;
+                    string dnsHost = dnsep.Host;
+                    int dnsPort = dnsep.Port;
                     //start new instance to accept next connection
                     Task newConnection = Task.Factory.StartNew(() => getConnections());
                     TCP t = new TCP();
                     //EndPoint ep2 = client.Client.RemoteEndPoint;
-                    DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;;
+
                    // IPEndPoint ipep = (IPEndPoint) ep2;
 
-                    TCPConfig remoteAddress = new TCPConfig(dnsep.Host, tcp.ip, dnsep.Port);
+                    TCPConfig remoteAddress = new TCPConfig(dnsHost, tcp.ip, dnsPort);
                     var msg = t.getMessage(client.GetStream());
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
@@ -99,7 +102,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine("{0} {1}",ex.Message,ex.StackTrace);
+                Console.WriteLine("{0} {1} {2}",ex.Message,ex.StackTrace, ex.TargetSite.Name);
             }
         }
 
