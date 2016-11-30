@@ -588,6 +588,10 @@ namespace Server
             {
                 mostCurrentServer = e.client;
             }
+            if (!(proposals.ContainsKey(prop)))
+            {
+                proposals.Add(prop, new List<TCPConfig>());
+            }
             proposals[prop].Add(e.client);
             Console.WriteLine("got ack {0}", proposals[prop].Count);
             if (proposals[prop].Count > (followers.Count / 2))
