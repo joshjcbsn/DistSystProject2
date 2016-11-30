@@ -340,7 +340,7 @@ namespace Server
 
             if (args[0] == "election")
             {
-                MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
+                MsgEventArgs msgArgs = new MsgEventArgs(null, client);
                 OnElection(sender, msgArgs);
             }
             else if (args[0] == "coordinator")
