@@ -783,7 +783,7 @@ namespace Server
         private Proposal parseProposal(string msg)
         {
             char[] space = {' '};
-            string[] args = msg.Split(space);
+            string[] args = msg.Split(space, 3);
             return new Proposal(args[2], new zxid(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
         }
 
