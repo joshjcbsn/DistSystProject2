@@ -470,7 +470,7 @@ namespace Server
         /// <param name="e"></param>
         private void OnElection(object sender, MsgEventArgs e)
         {
-
+            sendAck(e);
             if (phase != "election")
             {
                 holdElection();
