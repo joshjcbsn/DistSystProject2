@@ -162,13 +162,13 @@ namespace Server
                     proposals.Remove(election);
                     holdElection();
                 }
-
+/*
                 else
                 {
                     var currentEpoch = epoch;
                     Func<bool> waitforDiscover = delegate () { return phase == "discover"; };
                     SpinWait.SpinUntil(waitforDiscover);
-                }
+                }*/
             }
         }
         /// <summary>
