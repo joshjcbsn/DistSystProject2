@@ -152,7 +152,7 @@ namespace Server
             else
             {
                 response = false;
-                Func<bool> hasCoord = delegate() { return phase != "election"; };
+                Func<bool> hasCoord = delegate() { return response; };
                 SpinWait.SpinUntil(hasCoord, 5000);
                 //OnCoordinator handles changes if coord message is recieved
                 if (!(response))
@@ -162,7 +162,9 @@ namespace Server
                 }
                 else
                 {
-                    Discover();
+                    var currentEpoch = epoch;
+                    Func<bool> waitforSynch = delegate () { return phase != "discover"; };
+                    SpinWait.SpinUntil(waitforSynch);
                 }
             }
         }
@@ -571,6 +573,7 @@ namespace Server
         /// <param name="e"></param>
         private bool OnElection(object sender, MsgEventArgs e)
         {
+            getZxids();
 
             if (phase != "election")
             {
@@ -579,7 +582,8 @@ namespace Server
             }
             else
             {
-                return false;
+
+                return true;
             }
         }
 
@@ -719,7 +723,7 @@ namespace Server
             }
             else if (args[0] == "coordinator")
             {
-
+                Discover();
             }
             else if (args[0] == "newleader")
             {
