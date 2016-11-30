@@ -251,7 +251,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine("{0} {1}",ex.Message,ex.StackTrace);
+                Console.WriteLine("sendMessage {0} {1}",ex.Message,ex.StackTrace);
                 if (tcp == servers[leader])
                 {
                     holdElection();
@@ -436,6 +436,7 @@ namespace Server
             }
             catch (Exception ex)
             {
+
                 Console.WriteLine(ex.Message);
             }
         }
@@ -539,7 +540,8 @@ namespace Server
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine("OnAck {0} {1}",ex.Message, ex.StackTrace);
+
                     }
                 }
             }
@@ -592,7 +594,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("LockFile {0} {1}",ex.Message, ex.StackTrace);
             }
         }
         private void UnlockFile(string filename)
@@ -607,7 +609,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("UnlockFile {0} {1}",ex.Message, ex.StackTrace);
             }
         }
 
@@ -636,7 +638,7 @@ namespace Server
                     catch (Exception ex)
                     {
                         //probably means leader crashed
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine("OnLock {0} {1}",ex.Message, ex.StackTrace);
                         holdElection();
                     }
 
@@ -680,6 +682,7 @@ namespace Server
                     catch (Exception ex)
                     {
                         //remove from queue and run unlock again
+                        Console.WriteLine("OnUnlock {0} {1}",ex.Message, ex.StackTrace);
                         lockFiles[e.data].RemoveAt(0);
                         OnUnlock(sender, e);
                     }
@@ -704,7 +707,7 @@ namespace Server
                 catch (Exception ex)
                 {
                     //probably means leader failed
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("OnUnlock {0} {1}",ex.Message, ex.StackTrace);
                     holdElection();
                 }
             }
