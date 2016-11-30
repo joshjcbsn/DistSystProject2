@@ -135,6 +135,7 @@ namespace Server
                         sendProposal(coordinator,servers[s]);
                     }
                 }
+                Dicover(coordinator);
                 //end election
                 //Proposal discover = new Proposal("discover", new);
               //  sendBroadcast();
