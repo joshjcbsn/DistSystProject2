@@ -102,7 +102,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine("{0} {1} {2}",ex.Message,ex.StackTrace, ex.TargetSite.Name);
+                Console.WriteLine("{0} {1} {2}",ex.Message,ex.StackTrace, ex.TargetSite.ToString());
             }
         }
 
