@@ -137,7 +137,8 @@ namespace Server
             else
             {
                 response = false;
-                Thread.Sleep(3000);
+                Func<bool> hasCoord = delegate() { return response; };
+                SpinWait.SpinUntil(hasAck, 5000);
                 //OnCoordinator handles changes if coord message is recieved
                 if (!(response))
                 {
