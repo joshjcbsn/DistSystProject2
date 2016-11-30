@@ -180,7 +180,7 @@ namespace Server
                 Func<bool> hasZxidQuorum = delegate() { return ServerIds.Count > (followers.Count / 2); };
                 SpinWait.SpinUntil(hasZxidQuorum);
                 var e1 = epoch + 1;
-                Proposal newEpoch = new Proposal(String.Format("newepoch {0}", e1),new zxid(epoch,counter));
+                Proposal newEpoch = new Proposal(String.Format("newepoch {0}", e1), new zxid(epoch, counter));
                 proposals.Add(newEpoch, new List<TCPConfig>());
                 foreach (var tcp in ServerIds.Keys)
                 {
@@ -201,6 +201,10 @@ namespace Server
 
 
 
+
+            }
+            else
+            {
 
             }
 
@@ -245,7 +249,6 @@ namespace Server
                     sHistory.Write(e.data);
                 }
             }
-            ExecuteHistory(sender, e);
         }
          private void OnSendHistory(object sender, MsgEventArgs e)
         {
@@ -702,7 +705,14 @@ namespace Server
         /// <param name="e"></param>
         private void OnCommit(object sender, MsgEventArgs e)
         {
-            //Proposal prop = parseProposal(e.data);
+            Proposal prop = parseProposal(e.data);
+            char[] space = {' '};
+            string[] args = prop.v.Split(space, 2);
+            if (args[0] == "newleader")
+            {
+                ExecuteHistory(sender,e);
+                phase = "broadcast";
+            }
 
             //stage for
         }
