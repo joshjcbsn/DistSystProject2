@@ -97,11 +97,13 @@ namespace Server
         /// </summary>
         public void holdElection()
         {
+
             phase = "election";
             //response = false;
             getZxids();
             Console.WriteLine("Holding election");
             Proposal election = new Proposal("election", new zxid(epoch,counter));
+            proposals.Remove(election);
             proposals.Add(election, new List<TCPConfig>());
             proposals[election].Add(thisAddress);
             foreach (int p in ServerIds.Keys)
@@ -227,7 +229,7 @@ namespace Server
             Console.WriteLine("synch");
             if (leader == n)
             {
-                Proposal newlead = new Proposal(String.Format("newleader {0}", epoch), new zxid(epoch,counter));
+                Proposal newlead = new Proposal(String.Format("newleader {0} {1}", epoch, n), new zxid(epoch,counter));
                 proposals.Remove(newlead);
                 proposals.Add(newlead, new List<TCPConfig>());
                 proposals[newlead].Add(thisAddress);
@@ -605,6 +607,7 @@ namespace Server
             if ((ServerIds[n] > ServerIds[s]) &&
                 (phase != "election"))
             {
+
                 holdElection();
                 return false;
             }
@@ -647,8 +650,11 @@ namespace Server
 
         private bool OnNewLeader(object sender, MsgEventArgs e)
         {
-            if (Convert.ToInt32(e.data) == epoch)
+            char[] space = {' '};
+            var args = e.data.Split(space);
+            if (Convert.ToInt32(args[0]) == epoch)
             {
+                leader = Convert.ToInt32(args[1]);
                 sendMessage("gethistory", servers[leader]);
                 return true;
             }
