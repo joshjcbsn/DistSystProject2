@@ -105,7 +105,8 @@ namespace Server
             proposals[election].Add(thisAddress);
             foreach (int p in ServerIds.Keys)
             {
-                if (ServerIds[p] > ServerIds[n])
+                if ((ServerIds[p] > ServerIds[n]) ||
+                    (ServerIds[p] == ServerIds[n] && p > n))
                 {
 
                     sendProposal(election,servers[p]);
@@ -129,7 +130,8 @@ namespace Server
 
                 foreach (int s in ServerIds.Keys)
                 {
-                    if (ServerIds[s] < ServerIds[n])
+                    if ((ServerIds[s] < ServerIds[n]) ||
+                        (ServerIds[s] == ServerIds[n] && s < n))
                     {
                         followers.Add(s);
                         Console.WriteLine("test1");
