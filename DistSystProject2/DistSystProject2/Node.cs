@@ -93,7 +93,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("{0} {1}",ex.Message,ex.StackTrace);
             }
         }
 

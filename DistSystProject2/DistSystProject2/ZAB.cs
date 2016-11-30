@@ -251,7 +251,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("{0} {1}",ex.Message,ex.StackTrace);
                 if (tcp == servers[leader])
                 {
                     holdElection();
@@ -755,7 +755,7 @@ namespace Server
                     (a.epoch == b.epoch && a.counter > b.counter));
         }
     }
-    public class Proposal
+    public struct Proposal
     {
         public string v;
         public zxid z;
