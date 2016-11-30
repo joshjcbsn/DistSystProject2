@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0af7d68-7a4c-41cf-8bd5-27aa0342da0f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/Server.exe" afterPath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/Server.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/Server.exe.mdb" afterPath="$PROJECT_DIR$/../../DistSystProject2/bin/Debug/Server.exe.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/obj/Debug/Server.exe" afterPath="$PROJECT_DIR$/../../DistSystProject2/obj/Debug/Server.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/obj/Debug/Server.exe.mdb" afterPath="$PROJECT_DIR$/../../DistSystProject2/obj/Debug/Server.exe.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/TCP.cs" afterPath="$PROJECT_DIR$/../../DistSystProject2/TCP.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DistSystProject2/ZAB.cs" afterPath="$PROJECT_DIR$/../../DistSystProject2/ZAB.cs" />
     </list>
     <list id="84fe1825-0e59-44fa-bee6-dedbc01188fb" name="inactive" comment="" />
@@ -83,77 +80,77 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZAB.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ZAB.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../DistSystProject2/ZAB.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="312" column="9" selection-start-line="312" selection-start-column="9" selection-end-line="312" selection-end-column="9" />
+            <state relative-caret-position="612">
+              <caret line="276" column="17" selection-start-line="276" selection-start-column="17" selection-end-line="276" selection-end-column="17" />
               <folding>
-                <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-                <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-                <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-                <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-                <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-                <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-                <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-                <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-                <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-                <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-                <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-                <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-                <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-                <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-                <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-                <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-                <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-                <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-                <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-                <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-                <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+                <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+                <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+                <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+                <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+                <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+                <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+                <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+                <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+                <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+                <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+                <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+                <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+                <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+                <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+                <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+                <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+                <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+                <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+                <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+                <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -199,24 +196,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TCP.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TCP.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../DistSystProject2/TCP.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="97" column="11" selection-start-line="97" selection-start-column="11" selection-end-line="97" selection-end-column="11" />
+            <state relative-caret-position="413">
+              <caret line="89" column="42" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
               <folding>
-                <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-                <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-                <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-                <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-                <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-                <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-                <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-                <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-                <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-                <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-                <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-                <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+                <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+                <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+                <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+                <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+                <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+                <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+                <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+                <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+                <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+                <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+                <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+                <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
               </folding>
             </state>
           </provider>
@@ -239,10 +236,10 @@
         <option value="$PROJECT_DIR$/../../../Client/Client/Client.csproj" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/FileSystem.cs" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/tcp_config.txt" />
-        <option value="$PROJECT_DIR$/../../DistSystProject2/TCP.cs" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/Program.cs" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/Node.cs" />
         <option value="$PROJECT_DIR$/../../DistSystProject2/ZAB.cs" />
+        <option value="$PROJECT_DIR$/../../DistSystProject2/TCP.cs" />
       </list>
     </option>
   </component>
@@ -378,14 +375,7 @@
       <workItem from="1480462956479" duration="234000" />
       <workItem from="1480463784911" duration="1152000" />
       <workItem from="1480464970611" duration="99000" />
-      <workItem from="1480465103717" duration="5183000" />
-    </task>
-    <task id="LOCAL-00021" summary="print some stuff">
-      <created>1480456123703</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1480456123703</updated>
+      <workItem from="1480465103717" duration="5327000" />
     </task>
     <task id="LOCAL-00022" summary="remove key">
       <created>1480456331078</created>
@@ -723,11 +713,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480470060319</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="ack">
+      <created>1480470291672</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1480470291672</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105750000" />
+    <option name="totallyTimeSpent" value="105894000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -840,18 +837,18 @@
         <state relative-caret-position="238">
           <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -945,71 +942,71 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-            <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-            <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-            <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-            <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-            <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-            <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-            <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-            <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-            <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-            <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-            <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-            <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-            <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-            <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-            <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-            <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+            <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+            <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+            <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+            <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+            <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+            <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+            <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+            <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+            <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+            <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+            <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+            <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+            <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+            <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+            <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+            <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1055,18 +1052,18 @@
         <state relative-caret-position="238">
           <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -1118,71 +1115,71 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-            <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-            <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-            <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-            <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-            <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-            <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-            <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-            <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-            <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-            <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-            <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-            <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-            <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-            <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-            <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-            <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+            <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+            <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+            <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+            <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+            <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+            <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+            <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+            <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+            <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+            <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+            <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+            <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+            <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+            <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+            <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+            <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1228,18 +1225,18 @@
         <state relative-caret-position="1445">
           <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -1291,71 +1288,71 @@
         <state relative-caret-position="238">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding>
-            <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-            <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-            <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-            <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-            <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-            <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-            <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-            <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-            <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-            <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-            <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-            <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-            <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-            <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-            <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-            <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-            <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+            <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+            <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+            <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+            <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+            <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+            <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+            <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+            <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+            <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+            <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+            <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+            <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+            <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+            <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+            <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+            <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1401,18 +1398,18 @@
         <state relative-caret-position="1445">
           <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -1464,71 +1461,71 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-            <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-            <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-            <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-            <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-            <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-            <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-            <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-            <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-            <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-            <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-            <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-            <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-            <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-            <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-            <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-            <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+            <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+            <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+            <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+            <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+            <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+            <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+            <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+            <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+            <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+            <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+            <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+            <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+            <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+            <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+            <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+            <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1574,18 +1571,18 @@
         <state relative-caret-position="1343">
           <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -1637,71 +1634,71 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-            <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-            <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-            <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-            <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-            <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-            <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-            <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-            <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-            <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-            <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-            <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-            <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-            <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-            <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-            <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-            <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+            <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+            <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+            <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+            <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+            <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+            <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+            <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+            <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+            <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+            <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+            <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+            <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+            <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+            <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+            <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+            <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1747,18 +1744,18 @@
         <state relative-caret-position="884">
           <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -1810,71 +1807,71 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-            <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-            <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-            <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-            <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-            <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-            <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-            <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-            <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-            <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-            <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-            <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-            <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-            <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-            <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-            <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-            <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+            <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+            <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+            <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+            <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+            <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+            <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+            <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+            <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+            <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+            <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+            <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+            <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+            <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+            <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+            <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+            <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1920,18 +1917,18 @@
         <state relative-caret-position="952">
           <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -1983,71 +1980,71 @@
         <state relative-caret-position="238">
           <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
-            <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-            <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-            <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-            <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-            <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-            <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-            <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-            <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-            <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-            <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-            <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-            <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-            <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-            <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-            <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-            <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-            <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+            <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+            <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+            <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+            <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+            <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+            <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+            <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+            <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+            <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+            <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+            <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+            <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+            <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+            <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+            <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+            <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2093,18 +2090,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -2192,18 +2189,18 @@
         <state relative-caret-position="204">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -2273,18 +2270,18 @@
         <state relative-caret-position="204">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
           <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>
@@ -2301,27 +2298,6 @@
         <state relative-caret-position="34">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../DistSystProject2/TCP.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="97" column="11" selection-start-line="97" selection-start-column="11" selection-end-line="97" selection-end-column="11" />
-          <folding>
-            <marker date="1480466243680" expanded="true" signature="6:181" ph="..." />
-            <marker date="1480466243680" expanded="true" signature="199:3210" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="222:3208" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="324:515" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="334:504" ph="/* try ... */" />
-            <marker date="1480466243680" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
-            <marker date="1480466243680" expanded="true" signature="806:2094" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
-            <marker date="1480466243680" expanded="true" signature="2352:3098" ph="{...}" />
-            <marker date="1480466243680" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
-            <marker date="1480466243680" expanded="true" signature="3100:3202" ph="/* public TCPConfig getRemoteAddress() ... */" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2405,74 +2381,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../DistSystProject2/ZAB.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="312" column="9" selection-start-line="312" selection-start-column="9" selection-end-line="312" selection-end-column="9" />
+        <state relative-caret-position="612">
+          <caret line="276" column="17" selection-start-line="276" selection-start-column="17" selection-end-line="276" selection-end-column="17" />
           <folding>
-            <marker date="1480470279205" expanded="true" signature="6:175" ph="..." />
-            <marker date="1480470279205" expanded="true" signature="193:24501" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="218:22984" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="836:2639" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
-            <marker date="1480470279205" expanded="true" signature="2677:2737" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
-            <marker date="1480470279205" expanded="true" signature="2862:4977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
-            <marker date="1480470279205" expanded="true" signature="4489:4607" ph="/* end election ... */" />
-            <marker date="1480470279205" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
-            <marker date="1480470279205" expanded="true" signature="5149:5197" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="5242:6236" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6287:6646" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="6712:7072" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7139:7543" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="7611:8433" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="8493:9111" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="9173:9952" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10003:10640" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10686:10813" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10876:10920" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="10984:11137" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="11220:12629" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="12639:12789" ph="/// Handles create request ... " />
-            <marker date="1480470279205" expanded="true" signature="12850:13654" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13321:13644" ph="/* create lock file ... */" />
-            <marker date="1480470279205" expanded="true" signature="13664:13814" ph="/// handles delete request ... " />
-            <marker date="1480470279205" expanded="true" signature="13875:13895" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="13905:14053" ph="/// handles read request ... " />
-            <marker date="1480470279205" expanded="true" signature="14112:14551" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14561:14711" ph="/// handles append request ... " />
-            <marker date="1480470279205" expanded="true" signature="14772:14815" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="14825:14978" ph="/// handles election proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15041:15159" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15169:15325" ph="/// handles coordinator proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="15391:15683" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="15747:16033" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16044:16191" ph="/// handles Ok response ... " />
-            <marker date="1480470279205" expanded="true" signature="16248:16349" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="16361:16509" ph="/// handles ack response ... " />
-            <marker date="1480470279205" expanded="true" signature="16567:17044" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17090:17886" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="17896:18047" ph="/// handles commit proposal ... " />
-            <marker date="1480470279205" expanded="true" signature="18108:18206" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18131:18196" ph="/* Proposal prop = parseProposal(e.data); ... */" />
-            <marker date="1480470279205" expanded="true" signature="18254:18729" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="18778:19257" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="19267:19410" ph="/// handles locking ... " />
-            <marker date="1480470279205" expanded="true" signature="19469:20642" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="20652:20797" ph="/// handles unlocking ... " />
-            <marker date="1480470279205" expanded="true" signature="20858:22721" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="22773:22977" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23007:23922" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23102:23170" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23217:23293" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23349:23440" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23495:23545" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23600:23731" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23785:23916" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="23949:24499" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24051:24114" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24160:24244" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24308:24379" ph="{...}" />
-            <marker date="1480470279205" expanded="true" signature="24442:24492" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6:175" ph="..." />
+            <marker date="1480470427286" expanded="true" signature="193:24573" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="218:23056" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="836:2639" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="1873:2050" ph="/* thisNode.Election += new OnMsgHandler(OnElection); ... */" />
+            <marker date="1480470427286" expanded="true" signature="2677:2737" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="2746:2827" ph="/// Holds election to get new leader ... " />
+            <marker date="1480470427286" expanded="true" signature="2862:4977" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="3361:3703" ph="/* using (TcpClient client = new TcpClient(servers[p].dns, servers[p].port)) ... */" />
+            <marker date="1480470427286" expanded="true" signature="4489:4607" ph="/* end election ... */" />
+            <marker date="1480470427286" expanded="true" signature="4986:5119" ph="/// Replays proposals stored on disk, then searches for any additional missing proposals ... " />
+            <marker date="1480470427286" expanded="true" signature="5149:5197" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="5242:6236" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6287:6646" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="6712:7072" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7139:7543" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="7611:8433" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="8493:9147" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="9209:10024" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10075:10712" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10758:10885" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="10948:10992" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11056:11209" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="11292:12701" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="12711:12861" ph="/// Handles create request ... " />
+            <marker date="1480470427286" expanded="true" signature="12922:13726" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13393:13716" ph="/* create lock file ... */" />
+            <marker date="1480470427286" expanded="true" signature="13736:13886" ph="/// handles delete request ... " />
+            <marker date="1480470427286" expanded="true" signature="13947:13967" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="13977:14125" ph="/// handles read request ... " />
+            <marker date="1480470427286" expanded="true" signature="14184:14623" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14633:14783" ph="/// handles append request ... " />
+            <marker date="1480470427286" expanded="true" signature="14844:14887" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="14897:15050" ph="/// handles election proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15113:15231" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15241:15397" ph="/// handles coordinator proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="15463:15755" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="15819:16105" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16116:16263" ph="/// handles Ok response ... " />
+            <marker date="1480470427286" expanded="true" signature="16320:16421" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="16433:16581" ph="/// handles ack response ... " />
+            <marker date="1480470427286" expanded="true" signature="16639:17116" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17162:17958" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="17968:18119" ph="/// handles commit proposal ... " />
+            <marker date="1480470427286" expanded="true" signature="18180:18278" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18203:18268" ph="/* Proposal prop = parseProposal(e.data); ... */" />
+            <marker date="1480470427286" expanded="true" signature="18326:18801" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="18850:19329" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="19339:19482" ph="/// handles locking ... " />
+            <marker date="1480470427286" expanded="true" signature="19541:20714" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="20724:20869" ph="/// handles unlocking ... " />
+            <marker date="1480470427286" expanded="true" signature="20930:22793" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="22845:23049" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23079:23994" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23174:23242" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23289:23365" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23421:23512" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23567:23617" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23672:23803" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="23857:23988" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24021:24571" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24123:24186" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24232:24316" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24380:24451" ph="{...}" />
+            <marker date="1480470427286" expanded="true" signature="24514:24564" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../DistSystProject2/TCP.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="89" column="42" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
+          <folding>
+            <marker date="1480470427278" expanded="true" signature="6:181" ph="..." />
+            <marker date="1480470427278" expanded="true" signature="199:3213" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="222:3211" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="324:515" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="334:504" ph="/* try ... */" />
+            <marker date="1480470427278" expanded="true" signature="525:751" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480470427278" expanded="true" signature="806:2094" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="863:1179" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="2104:2283" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480470427278" expanded="true" signature="2352:3101" ph="{...}" />
+            <marker date="1480470427278" expanded="true" signature="2409:2731" ph="/* IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint; ... */" />
+            <marker date="1480470427278" expanded="true" signature="3103:3205" ph="/* public TCPConfig getRemoteAddress() ... */" />
           </folding>
         </state>
       </provider>

@@ -87,7 +87,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine("sendMessage {0} {1}",ex.Message,ex.StackTrace);
+                Console.WriteLine("sendTcpMessage {0} {1}",ex.Message,ex.StackTrace);
             }
         }
 

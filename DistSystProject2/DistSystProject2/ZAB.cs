@@ -248,6 +248,7 @@ namespace Server
                     TCP t = new TCP();
                     t.sendTcpMessage(msg,client.GetStream());
                     Console.WriteLine("Sent message {0} to {1}", msg, tcp.dns);
+                    client.Close();
 
                 }
             }
@@ -272,6 +273,7 @@ namespace Server
                     var text = String.Format("proposal {0} {1} {2}", (int)p.z.epoch, (int)p.z.counter, p.v);
                     t.sendTcpMessage(text,client.GetStream());
                     Console.WriteLine("Sent proposal ({0}, {1}, '{2}') to {3}", (int)p.z.epoch, (int)p.z.counter, p.v, tcp.dns);
+                    client.Close();
                 }
             }
             catch (Exception ex)
