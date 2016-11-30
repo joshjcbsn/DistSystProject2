@@ -407,8 +407,7 @@ namespace Server
             if (args[0] == "election")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(null, client);
-                OnElection(sender, msgArgs);
-                return true;
+                return OnElection(sender, msgArgs);
             }
             else if (args[0] == "coordinator")
             {
@@ -566,12 +565,17 @@ namespace Server
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnElection(object sender, MsgEventArgs e)
+        private bool OnElection(object sender, MsgEventArgs e)
         {
 
             if (phase != "election")
             {
                 holdElection();
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
