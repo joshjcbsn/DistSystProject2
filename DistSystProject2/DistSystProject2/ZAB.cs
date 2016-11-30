@@ -394,9 +394,10 @@ namespace Server
         {
             ServerIds.Remove(n);
             ServerIds.Add(n, new zxid(epoch, counter));
-            foreach (TCPConfig s in servers.Values)
+            foreach (int s in servers.Keys)
             {
-                sendMessage("getzxid",s);
+                if (s != n)
+                    sendMessage("getzxid",servers[s]);
             }
             Func<bool> hasIds = delegate() { return ServerIds.Count == servers.Count; };
             SpinWait.SpinUntil(hasIds, 5000);
