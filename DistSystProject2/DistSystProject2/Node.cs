@@ -79,14 +79,15 @@ namespace Server
                 Console.WriteLine("Waiting for connection");
                 using (TcpClient client = listener.AcceptTcpClient())
                 {
+
+
+                    //start new instance to accept next connection
+                    Task newConnection = Task.Factory.StartNew(() => getConnections());
                     var ipep = (IPEndPoint) client.Client.RemoteEndPoint;
                     var ipAddr = ipep.Address;
                     var port = ipep.Port;
                     var hostEntry = Dns.GetHostEntry(ipAddr);
                     var dnsHost = hostEntry.HostName;
-
-                    //start new instance to accept next connection
-                    Task newConnection = Task.Factory.StartNew(() => getConnections());
                     TCP t = new TCP();
                     //EndPoint ep2 = client.Client.RemoteEndPoint;
 
