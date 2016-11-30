@@ -79,9 +79,9 @@ namespace Server
                 Console.WriteLine("Waiting for connection");
                 using (TcpClient client = listener.AcceptTcpClient())
                 {
-                    DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;;
-                    string dnsHost = dnsep.Host;
-                    int dnsPort = dnsep.Port;
+                    var dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;;
+                    var dnsHost = dnsep.Host;
+                    var dnsPort = dnsep.Port;
                     //start new instance to accept next connection
                     Task newConnection = Task.Factory.StartNew(() => getConnections());
                     TCP t = new TCP();
