@@ -335,7 +335,7 @@ namespace Server
         {
             char[] space = {' '};
             string[] args = P.v.Split(space, 2);
-            Console.WriteLine("handling proposal {(0}, {1}, {2})", P.z.epoch, P.z.counter, P.v);
+            Console.WriteLine("handling proposal ({0}, {1}, {2})", P.z.epoch, P.z.counter, P.v);
 
 
             if (args[0] == "election")
