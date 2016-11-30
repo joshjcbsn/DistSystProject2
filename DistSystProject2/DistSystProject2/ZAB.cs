@@ -601,7 +601,7 @@ namespace Server
             sendMessage("getzxid",servers[s]);
             Func<bool> hasId = delegate() { return ServerIds.ContainsKey(s); };
             SpinWait.SpinUntil(hasId);
-
+            Console.WriteLine("got id");
             if ((ServerIds[n] > ServerIds[s]) &&
                 (phase != "election"))
             {
