@@ -237,7 +237,8 @@ namespace Server
                 proposals[newlead].Add(thisAddress);
                 foreach (var tcp in ServerIds.Keys)
                 {
-                    sendProposal(newlead,servers[tcp]);
+                    if (tcp!=n)
+                        sendProposal(newlead,servers[tcp]);
                 }
                 Func<bool> isLeader = delegate() { return proposals[newlead].Count > (ServerIds.Count / 2); };
                 SpinWait.SpinUntil(isLeader);
@@ -621,7 +622,7 @@ namespace Server
 
                 leader = s;
                 Console.WriteLine("Elected leader");
-                phase = "discover";
+                //phase = "discover";
                 Discover();
                 return true;
             }
