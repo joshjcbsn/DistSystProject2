@@ -392,7 +392,8 @@ namespace Server
 
         private void getZxids()
         {
-            ServerIds[n] = new zxid(epoch, counter);
+            ServerIds.Remove(n);
+            ServerIds.Add(n, new zxid(epoch, counter));
             foreach (TCPConfig s in servers.Values)
             {
                 sendMessage("getzxid",s);
@@ -409,7 +410,9 @@ namespace Server
         {
             char[] space = {' '};
             string[] args = e.data.Split(space);
-            ServerIds[Convert.ToInt32(args[0])] = new zxid(Convert.ToInt32(args[1]), Convert.ToInt32(args[2]));
+            ServerIds.Remove(Convert.ToInt32(args[0]));
+            ServerIds.Add(Convert.ToInt32(args[0]), new zxid(Convert.ToInt32(args[1]), Convert.ToInt32(args[2])));
+
         }
 
         /// <summary>
