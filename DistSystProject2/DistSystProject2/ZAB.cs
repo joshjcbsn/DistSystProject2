@@ -180,8 +180,8 @@ namespace Server
                 //leader
                 Func<bool> hasZxidQuorum = delegate() { return ServerIds.Count > (followers.Count / 2); };
                 SpinWait.SpinUntil(hasZxidQuorum);
-                var e1 = epoch + 1;
-                Proposal newEpoch = new Proposal(String.Format("newepoch {0}", e1), new zxid(epoch, counter));
+                epoch++;
+                Proposal newEpoch = new Proposal(String.Format("newepoch {0}", epoch), new zxid(epoch, counter));
                 proposals.Add(newEpoch, new List<TCPConfig>());
                 foreach (var tcp in ServerIds.Keys)
                 {
