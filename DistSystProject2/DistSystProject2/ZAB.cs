@@ -174,6 +174,7 @@ namespace Server
         {
             getZxids();
             phase = "discover";
+            Console.WriteLine("discover");
             if (leader == n)
             {
                 //leader
@@ -203,12 +204,13 @@ namespace Server
 
 
             }
+            /*
             else
             {
                 //var currentEpoch = epoch;
                 Func<bool> waitforSynch = delegate () { return phase != "discover"; };
                 SpinWait.SpinUntil(waitforSynch);
-            }
+            }*/
 
 
         }
@@ -216,6 +218,7 @@ namespace Server
         private void Synch()
         {
             phase = "synch";
+            Console.WriteLine("synch");
             if (leader == n)
             {
                 Proposal newlead = new Proposal(String.Format("newleader {0}", epoch), new zxid(epoch,counter));
