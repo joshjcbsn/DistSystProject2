@@ -736,6 +736,8 @@ namespace Server
             }
             else if (args[0] == "coordinator")
             {
+                leader = Convert.ToInt32(args[1]);
+                Console.WriteLine("Elected leader {0}", leader);
                 Discover();
             }
             else if (args[0] == "newleader")
