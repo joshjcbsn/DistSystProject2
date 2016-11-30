@@ -143,7 +143,7 @@ namespace Server
                 proposals.Remove(coordinator);
                 proposals.Add(coordinator, new List<TCPConfig>());
                 proposals[coordinator].Add(thisAddress);
-                Dicover();
+                Discover();
                 //end election
                 //Proposal discover = new Proposal("discover", new);
               //  sendBroadcast();
@@ -152,13 +152,17 @@ namespace Server
             else
             {
                 response = false;
-                Func<bool> hasCoord = delegate() { return response; };
+                Func<bool> hasCoord = delegate() { return phase != "election"; };
                 SpinWait.SpinUntil(hasCoord, 5000);
                 //OnCoordinator handles changes if coord message is recieved
                 if (!(response))
                 {
                     proposals.Remove(election);
                     holdElection();
+                }
+                else
+                {
+                    Discover();
                 }
             }
         }
@@ -170,7 +174,7 @@ namespace Server
             holdElection();
         }
 
-        public void Dicover()
+        private void Discover()
         {
             getZxids();
             phase = "discover";
@@ -180,8 +184,8 @@ namespace Server
                 //leader
                 Func<bool> hasZxidQuorum = delegate() { return ServerIds.Count > (followers.Count / 2); };
                 SpinWait.SpinUntil(hasZxidQuorum);
-                epoch++;
-                Proposal newEpoch = new Proposal(String.Format("newepoch {0}", epoch), new zxid(epoch, counter));
+                var e1 = epoch + 1;
+                Proposal newEpoch = new Proposal(String.Format("newepoch {0}", e1), new zxid(epoch, counter));
                 proposals.Add(newEpoch, new List<TCPConfig>());
                 foreach (var tcp in ServerIds.Keys)
                 {
@@ -419,7 +423,7 @@ namespace Server
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
 
-                return OnNewEpoch(sender, msgArgs);;
+                return OnNewEpoch(sender, msgArgs);
 
             }
             else if (args[0] == "newleader")
@@ -587,7 +591,8 @@ namespace Server
         private bool OnCoordinator(object sender, MsgEventArgs e)
         {
             response = true;
-            if ((n > Convert.ToInt32(e.data)) &&
+            getZxids();
+            if ((ServerIds[n] > ServerIds[Convert.ToInt32(e.data)]) &&
                 (phase != "election"))
             {
                 holdElection();
@@ -598,7 +603,7 @@ namespace Server
 
                 leader = Convert.ToInt32(e.data);
                 Console.WriteLine("Elected leader");
-                Dicover();
+                phase = "discover";
                 return true;
             }
         }
@@ -677,15 +682,22 @@ namespace Server
             Console.WriteLine("got ack {0}", proposals[prop].Count);
             if (proposals[prop].Count > (followers.Count / 2))
             {
-                foreach (int f in followers)
-                {
-                    sendMessage(String.Format("commit {0}", e.data), servers[f]);
+                Commit(sender, e);
 
-                }
             }
         }
 
-        private void Deliver(MsgEventArgs e)
+        public void Commit(object sender, MsgEventArgs e)
+        {
+            Deliver(sender, e);
+            foreach (int f in followers)
+            {
+                sendMessage(String.Format("commit {0}", e.data), servers[f]);
+
+            }
+        }
+
+        private void Deliver(object sender, MsgEventArgs e)
         {
             char[] space = {' '};
             string[] args = e.data.Split(space, 2);
@@ -705,6 +717,16 @@ namespace Server
                 files.DeleteFile(args[1]);
                 sendMessage(String.Format("Deleted file {0}", args[1]), e.client);
             }
+            else if (args[0] == "coordinator")
+            {
+
+            }
+            else if (args[0] == "newleader")
+            {
+                ExecuteHistory(sender, e);
+                phase = "broadcast";
+                Console.WriteLine("broadcast");
+            }
 
         }
 
@@ -716,18 +738,9 @@ namespace Server
         private void OnCommit(object sender, MsgEventArgs e)
         {
             Proposal prop = parseProposal(e.data);
-            char[] space = {' '};
-            string[] args = prop.v.Split(space, 2);
-            Console.WriteLine("Commiting {0}", args[0]);
-            if (args[0] == "newleader")
-            {
-                ExecuteHistory(sender, e);
-                phase = "broadcast";
-            }
-            else
-            {
-                Deliver(e);
-            }
+            Console.WriteLine("Committing {0}", prop.v);
+            Deliver(sender, e);
+
 
             //stage for
         }
