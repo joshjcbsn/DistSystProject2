@@ -311,6 +311,7 @@ namespace Server
 
         public void sendAck(MsgEventArgs e)
         {
+            Console.WriteLine("ack");
             sendMessage(String.Format("ack {0}", e.data), e.client);
         }
 
