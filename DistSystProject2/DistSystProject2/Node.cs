@@ -87,7 +87,9 @@ namespace Server
                     var ipAddr = ipep.Address;
                     var port = ipep.Port;
                     var hostEntry = Dns.GetHostEntry(ipAddr);
+
                     var dnsHost = hostEntry.HostName;
+                    dnsHost = dnsHost.Replace("internal", "amazonaws.com");
                     TCP t = new TCP();
                     //EndPoint ep2 = client.Client.RemoteEndPoint;
 
