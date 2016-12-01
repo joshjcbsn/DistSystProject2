@@ -226,6 +226,7 @@ namespace Server
 
             else
             {
+                Console.WriteLine("waiting for epoch");
                 response = false;
                 Func<bool> waitforEpoch = delegate () { return response; };
                 SpinWait.SpinUntil(waitforEpoch);
@@ -261,6 +262,7 @@ namespace Server
             }
             else
             {
+                Console.WriteLine("waiting for leader");
                 response = false;
                 Func<bool> waitforLeader = delegate () { return response; };
                 SpinWait.SpinUntil(waitforLeader);
