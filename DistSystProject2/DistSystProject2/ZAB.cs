@@ -692,9 +692,11 @@ namespace Server
 
         private bool OnNewLeader(object sender, MsgEventArgs e)
         {
-            response = true;
+
             char[] space = {' '};
             var args = e.data.Split(space);
+            Console.WriteLine("Epoch {0}", Convert.ToInt32(args[0]));
+            response = true;
             if (Convert.ToInt32(args[0]) == epoch)
             {
                 leader = Convert.ToInt32(args[1]);
