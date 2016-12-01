@@ -204,7 +204,8 @@ namespace Server
                 proposals.Add(newEpoch, new List<TCPConfig>());
                 foreach (var tcp in ServerIds.Keys)
                 {
-                    sendProposal(newEpoch, servers[tcp]);
+                    if (tcp != n)
+                        sendProposal(newEpoch, servers[tcp]);
                 }
 
 
