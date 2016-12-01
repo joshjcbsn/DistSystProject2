@@ -245,18 +245,25 @@ namespace Server
             if (leader == n)
             {
                 var e1 = epoch + 1;
-                Proposal newlead = new Proposal(String.Format("newleader {0} {1}", e1, n), new zxid(epoch,counter));
+                Proposal newlead = new Proposal(String.Format("newleader {0} {1}", e1, n), new zxid(epoch, counter));
                 proposals.Remove(newlead);
                 proposals.Add(newlead, new List<TCPConfig>());
                 proposals[newlead].Add(thisAddress);
                 foreach (var tcp in ServerIds.Keys)
                 {
-                    if (tcp!=n)
-                        sendProposal(newlead,servers[tcp]);
+                    if (tcp != n)
+                        sendProposal(newlead, servers[tcp]);
                 }
                 Func<bool> isLeader = delegate() { return proposals[newlead].Count > (ServerIds.Count / 2); };
                 SpinWait.SpinUntil(isLeader);
-                epoch++;
+               // epoch++;
+
+            }
+            else
+            {
+                response = false;
+                Func<bool> waitforLeader = delegate () { return response; };
+                SpinWait.SpinUntil(waitforLeader);
 
             }
         }
@@ -685,6 +692,7 @@ namespace Server
 
         private bool OnNewLeader(object sender, MsgEventArgs e)
         {
+            response = true;
             char[] space = {' '};
             var args = e.data.Split(space);
             if (Convert.ToInt32(args[0]) == epoch)
