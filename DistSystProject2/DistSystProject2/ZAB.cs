@@ -187,7 +187,6 @@ namespace Server
         private void Discover()
         {
             Console.WriteLine("discover");
-            getZxids();
             phase = "discover";
 
             if (leader == n)
