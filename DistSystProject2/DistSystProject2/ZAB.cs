@@ -186,9 +186,10 @@ namespace Server
 
         private void Discover()
         {
+            Console.WriteLine("discover");
             getZxids();
             phase = "discover";
-            Console.WriteLine("discover");
+
             if (leader == n)
             {
                 //leader
@@ -627,7 +628,7 @@ namespace Server
 
                 leader = s;
                 Console.WriteLine("Elected leader");
-                //phase = "discover";
+                phase = "discover";
                 Discover();
                 return true;
             }
