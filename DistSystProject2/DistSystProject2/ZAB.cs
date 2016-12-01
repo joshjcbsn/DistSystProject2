@@ -79,7 +79,7 @@ namespace Server
 
             recvCoord = false;
            // thisNode.getConnections();
-            Task socket = Task.Factory.StartNew(() => thisNode.getConnections());
+            Task socket = Task.Factory.StartNew(() => getConnections());
             ServerIds = new Dictionary<int, zxid>();
             Thread.Sleep(3000);
             getZxids();
