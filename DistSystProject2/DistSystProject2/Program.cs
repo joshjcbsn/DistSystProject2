@@ -57,6 +57,7 @@ namespace Server
             try
             {
                 ZAB zk = new ZAB(n, tcpConfig);
+                Task socket = Task.Factory.StartNew(() => zk.getConnections());
                 zk.holdElection();
             }
             catch (Exception ex)
