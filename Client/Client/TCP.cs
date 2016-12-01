@@ -12,22 +12,8 @@ namespace Client
 {
     class TCP
     {
-        private TcpClient client;
-        public TCPConfig remoteAddress;
-        public TCP(TcpClient _client)
+        public TCP()
         {
-            try
-            {
-                client = _client;
-                IPEndPoint ipep = (IPEndPoint) client.Client.RemoteEndPoint;
-                DnsEndPoint dnsep = (DnsEndPoint) client.Client.RemoteEndPoint;
-                remoteAddress = new TCPConfig(dnsep.Host, ipep.Address.ToString(), ipep.Port);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
         }
 
         /// <summary>
@@ -35,7 +21,7 @@ namespace Client
         /// </summary>
         /// <param name="client">TCP client recieving message</param>
         /// <returns>message</returns>
-        public string getMessage()
+        public string getMessage(TcpClient client)
         {
             try
             {
@@ -67,23 +53,24 @@ namespace Client
         /// </summary>
         /// <param name="msg"></param>
         /// <param name="config"></param>
-        public void sendMessage(string msg)
+        public void sendMessage(string msg, TCPConfig config)
         {
             try
             {
-                using (NetworkStream stream = client.GetStream())
+                using (TcpClient client = new TcpClient(config.dns, config.port))
                 {
-                    byte[] msgBytes = Encoding.ASCII.GetBytes(msg);
-                    stream.Write(msgBytes, 0, msgBytes.Length);
+                    try
+                    {
+                        using (NetworkStream stream = client.GetStream())
+                        {
+                            byte[] msgBytes = Encoding.ASCII.GetBytes(msg);
+                            stream.Write(msgBytes, 0, msgBytes.Length);
+                        }
+                    }
+                    catch (Exception ex) { Console.WriteLine(ex.Message); }
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-        }
-
-
-        public TCPConfig getRemoteAddress()
-        {
-            return remoteAddress;
         }
     }
 }

@@ -30,11 +30,10 @@ namespace Client
         {
             try
             {
-                using (TcpClient server = new TcpClient(remoteAddress.dns, remoteAddress.port))
-                {
-                    TCP t = new TCP(server);
-                    t.sendMessage(req);
-                }
+
+                TCP t = new TCP();
+                t.sendMessage(req, remoteAddress);
+
                 getResponse();
             }
             catch (Exception ex)
@@ -48,8 +47,8 @@ namespace Client
             Console.WriteLine("Waiting for response");
             using (TcpClient server = listener.AcceptTcpClient())
             {
-                TCP t = new TCP(server);
-                string response = t.getMessage();
+                TCP t = new TCP();
+                string response = t.getMessage(server);
                 ResponseEventArgs e = new ResponseEventArgs(response);
                 OnResponse(e);
             }
