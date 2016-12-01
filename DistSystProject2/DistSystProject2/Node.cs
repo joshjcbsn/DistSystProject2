@@ -18,7 +18,7 @@ namespace Server
         public TCPConfig tcp; //tcp configuration of this node
         public TcpListener listener; //tcp listener for this node
         public Dictionary<string, TCPConfig> servers;
-        public Dictionary<string, TCPConfig> clients;
+     //   public Dictionary<string, TCPConfig> clients;
 
 
         /// <summary>
@@ -102,10 +102,7 @@ namespace Server
 
                         port = ipep.Port;
                         remoteAddress = new TCPConfig(dnsHost, ipAddr, port);
-                        if (!(clients.ContainsKey(ipAddr)))
-                        {
-                            clients.Add(ipAddr, remoteAddress);
-                        }
+
                     }
 
                    // dnsHost = dnsHost.Replace("internal", "amazonaws.com");
@@ -212,7 +209,8 @@ namespace Server
             }
             else if (commands[0] == "connect")
             {
-                MsgEventArgs msgArgs = new MsgEventArgs(null, sender);
+                TCPConfig clientConfig = new TCPConfig(commands[1], sender.ip, sender.port);
+                MsgEventArgs msgArgs = new MsgEventArgs(null, clientConfig);
                 OnConnect(msgArgs);
             }
             else if (commands[0] == "getzxid")

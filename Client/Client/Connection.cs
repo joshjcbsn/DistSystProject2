@@ -23,7 +23,8 @@ namespace Client
 
         public void Connect()
         {
-            sendRequest("connect");
+            string dnsAddress = Dns.GetHostName();
+            sendRequest(String.Format("connect {0}", dnsAddress));
         }
 
         public void sendRequest(string req)
