@@ -272,6 +272,7 @@ namespace Server
                 SpinWait.SpinUntil(waitforLeader);
                 thisNode.getConnections();
 
+
             }
         }
         private void AppendHistory(Proposal prop)
@@ -714,6 +715,7 @@ namespace Server
         private bool OnNewLeader(object sender, MsgEventArgs e)
         {
 
+            Console.WriteLine("got leader");
             char[] space = {' '};
             var args = e.data.Split(space);
             Console.WriteLine("Epoch {0}", Convert.ToInt32(args[0]));
