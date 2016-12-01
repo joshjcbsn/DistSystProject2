@@ -697,6 +697,7 @@ namespace Server
             var args = e.data.Split(space);
             Console.WriteLine("Epoch {0}", Convert.ToInt32(args[0]));
             response = true;
+            Console.WriteLine("test");
             if (Convert.ToInt32(args[0]) == epoch)
             {
                 leader = Convert.ToInt32(args[1]);
