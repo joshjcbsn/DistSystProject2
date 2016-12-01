@@ -392,7 +392,7 @@ namespace Server
 
         public void sendAck(MsgEventArgs e)
         {
-            Console.WriteLine("ack {0} {1}",e.client.dns, e.client.port);
+            Console.WriteLine("ack {0} {1} {2}",e.data, e.client.dns, e.client.port);
             sendMessage(String.Format("ack {0}", e.data), e.client);
         }
 
