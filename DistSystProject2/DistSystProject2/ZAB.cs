@@ -82,7 +82,7 @@ namespace Server
          //   Task socket = Task.Factory.StartNew(() => thisNode.getConnections());
             ServerIds = new Dictionary<int, zxid>();
             Thread.Sleep(3000);
-            getZxids();
+           // getZxids();
 
             //holdElection();
 
@@ -92,6 +92,7 @@ namespace Server
 
         public void getConnections()
         {
+
             thisNode.getConnections();
 
         }
@@ -530,10 +531,8 @@ namespace Server
         private void OnGetZxid(object sender, MsgEventArgs e)
         {
             sendMessage(String.Format("zxid {0} {1} {2}", n, epoch, counter), e.client);
-            if (phase == "broadcast")
-            {
-                thisNode.getConnections();
-            }
+            thisNode.getConnections();
+
 
         }
         private void OnZxid(object sender, MsgEventArgs e)
