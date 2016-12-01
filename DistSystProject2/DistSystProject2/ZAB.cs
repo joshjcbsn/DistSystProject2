@@ -661,6 +661,7 @@ namespace Server
                     epoch = Convert.ToInt32(e.data);
                     sendAck(e);
                     phase = "sync";
+                    Sync();
                     return true;
                     //go to sync
                 }
