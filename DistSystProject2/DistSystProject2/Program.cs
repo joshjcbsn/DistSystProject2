@@ -54,7 +54,15 @@ namespace Server
                     tcpConfig.Add(Convert.ToInt32(words[0]), new TCPConfig(words[1], words[2], Convert.ToInt32(words[3])));
                 }
             }
-            ZAB zk = new ZAB(n, tcpConfig);
+            try
+            {
+                ZAB zk = new ZAB(n, tcpConfig);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("sendMessage {0} {1}",ex.Message,ex.StackTrace);
+
+            }
           //  Console.Read();
           //  zk.holdElection();
         }
