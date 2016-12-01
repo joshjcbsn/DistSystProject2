@@ -223,15 +223,17 @@ namespace Server
 
 
             }
-/*
+
             else
             {
+                response = false;
+                Func<bool> waitforEpoch = delegate () { return response; };
+                SpinWait.SpinUntil(waitforEpoch);
                 //sendMessage(String.Format("zxid {0} {1} {2}", n, epoch, counter), servers[leader]);
                 //var currentEpoch = epoch;
-                Func<bool> waitforSync = delegate () { return phase != "discover"; };
-                SpinWait.SpinUntil(waitforSync);
-                Sync();
-            }*/
+
+            //   Sync();
+            }
 
 
         }
@@ -651,6 +653,7 @@ namespace Server
 
         private bool OnNewEpoch(object sender, MsgEventArgs e)
         {
+            response = true;
             if (leader != n)
             {
                 if (Convert.ToInt32(e.data) >= epoch)
