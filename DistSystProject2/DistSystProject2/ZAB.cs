@@ -211,28 +211,29 @@ namespace Server
                 }
                 else
                 {
-                    Synch();
+                    Sync();
                 }
 
 
 
 
             }
-            /*
+
             else
             {
                 //var currentEpoch = epoch;
-                Func<bool> waitforSynch = delegate () { return phase != "discover"; };
-                SpinWait.SpinUntil(waitforSynch);
-            }*/
+                Func<bool> waitforSync = delegate () { return phase != "discover"; };
+                SpinWait.SpinUntil(waitforSync);
+                Sync();
+            }
 
 
         }
 
-        private void Synch()
+        private void Sync()
         {
-            phase = "synch";
-            Console.WriteLine("synch");
+            phase = "sync";
+            Console.WriteLine("sync");
             if (leader == n)
             {
                 var e1 = epoch + 1;
@@ -641,9 +642,9 @@ namespace Server
                 {
                     epoch = Convert.ToInt32(e.data);
                     sendAck(e);
-                    Synch();
+                    phase = "sync";
                     return true;
-                    //go to synch
+                    //go to sync
                 }
                 else
                 {
