@@ -312,23 +312,32 @@ namespace Server
 
         private void ExecuteHistory()
         {
-            using (FileStream fHistory = new FileStream("history.txt", FileMode.OpenOrCreate, FileAccess.Read))
+            try
             {
-                using (StreamReader sHistory = new StreamReader(fHistory))
+                using (FileStream fHistory = new FileStream("history.txt", FileMode.OpenOrCreate, FileAccess.Read))
                 {
-                    string line;
-                    while ((line = sHistory.ReadLine())!=null)
+                    using (StreamReader sHistory = new StreamReader(fHistory))
                     {
-                        char[] space = {' '};
-                        string[] args = line.Split(space, 3);
-                        Proposal thisProp = new Proposal(args[2], new zxid(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
-                        if (thisProp.z > lastId)
+                        string line;
+                        while ((line = sHistory.ReadLine()) != null)
                         {
-                            ProposalHandler(thisProp, this, thisAddress);
+                            char[] space = {' '};
+                            string[] args = line.Split(space, 3);
+                            Proposal thisProp = new Proposal(args[2],
+                                new zxid(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
+                            if (thisProp.z > lastId)
+                            {
+                                ProposalHandler(thisProp, this, thisAddress);
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("sendProposal {0} {1}",ex.Message, ex.StackTrace);
+            }
+
         }
         private void sendMessage(string msg, TCPConfig tcp)
         {
