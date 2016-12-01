@@ -670,7 +670,7 @@ namespace Server
                 if (Convert.ToInt32(e.data) >= epoch)
                 {
                     epoch = Convert.ToInt32(e.data);
-                    sendAck(e);
+                //    sendAck(e);
                     phase = "sync";
                     Sync();
                     return true;
