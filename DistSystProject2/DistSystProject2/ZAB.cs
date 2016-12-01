@@ -270,6 +270,7 @@ namespace Server
                 response = false;
                 Func<bool> waitforLeader = delegate () { return response; };
                 SpinWait.SpinUntil(waitforLeader);
+                thisNode.getConnections();
 
             }
         }
@@ -828,6 +829,7 @@ namespace Server
             Proposal prop = parseProposal(e.data);
             Console.WriteLine("Committing {0}", prop.v);
             Deliver(prop);
+            thisNode.getConnections();
 
 
             //stage for
