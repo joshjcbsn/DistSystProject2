@@ -30,10 +30,11 @@ namespace Client
         {
             try
             {
-
-                TCP t = new TCP();
-                t.sendMessage(req, remoteAddress);
-
+                using (TcpClient server = new TcpClient(remoteAddress.dns, remoteAddress.port))
+                {
+                    TCP t = new TCP();
+                    t.sendMessage(req, remoteAddress);
+                }
                 getResponse();
             }
             catch (Exception ex)

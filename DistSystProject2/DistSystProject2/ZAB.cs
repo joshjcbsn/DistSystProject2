@@ -530,6 +530,11 @@ namespace Server
         private void OnGetZxid(object sender, MsgEventArgs e)
         {
             sendMessage(String.Format("zxid {0} {1} {2}", n, epoch, counter), e.client);
+            if (phase == "broadcast")
+            {
+                thisNode.getConnections();
+            }
+
         }
         private void OnZxid(object sender, MsgEventArgs e)
         {

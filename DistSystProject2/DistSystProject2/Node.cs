@@ -19,6 +19,7 @@ namespace Server
         public TcpListener listener; //tcp listener for this node
         public Dictionary<string, TCPConfig> servers;
 
+
         /// <summary>
         /// Initiates server
         /// </summary>
