@@ -435,7 +435,8 @@ namespace Server
             else if (args[0] == "coordinator")
             {
                 MsgEventArgs msgArgs = new MsgEventArgs(args[1], client);
-                return OnCoordinator(sender, msgArgs);
+                OnCoordinator(sender, msgArgs);
+                return false;
 
             }
             else if (args[0] == "newepoch")
