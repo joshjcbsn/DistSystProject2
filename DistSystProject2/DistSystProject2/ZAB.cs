@@ -18,6 +18,7 @@ namespace Server
         public int counter;
         public string phase;
         public int leader;
+        public bool recvCoord;
         public TCPConfig mostCurrentServer;
         public zxid lastId;
         public FileSystem files;
@@ -126,7 +127,7 @@ namespace Server
             Console.WriteLine("waiting");
             Func<bool> hasAck = delegate() { return (proposals[election].Count == servers.Count); };
             SpinWait.SpinUntil(hasAck, 5000);
-            if (phase == "election")
+            if (!recvCoord)
             {
                 Console.WriteLine("waited");
                 if (proposals[election].Count == 1)
