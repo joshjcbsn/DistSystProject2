@@ -18,6 +18,7 @@ namespace Server
         public TCPConfig tcp; //tcp configuration of this node
         public TcpListener listener; //tcp listener for this node
         public Dictionary<string, TCPConfig> servers;
+        public Dictionary<string, TCPConfig> clients;
 
 
         /// <summary>
@@ -87,16 +88,24 @@ namespace Server
                     var ipep = (IPEndPoint) client.Client.RemoteEndPoint;
                     var ipAddr = ipep.Address.ToString();
                     Console.WriteLine(ipAddr);
+                    TCPConfig remoteAddress;
                     string dnsHost = null;
                     int port;
                     if (servers.ContainsKey(ipAddr))
                     {
                         dnsHost = servers[ipAddr].dns;
                         port = servers[ipAddr].port;
+                        remoteAddress = new TCPConfig(dnsHost, ipAddr, port);
                     }
                     else
                     {
+
                         port = ipep.Port;
+                        remoteAddress = new TCPConfig(dnsHost, ipAddr, port);
+                        if (!(clients.ContainsKey(ipAddr)))
+                        {
+                            clients.Add(ipAddr, remoteAddress);
+                        }
                     }
 
                    // dnsHost = dnsHost.Replace("internal", "amazonaws.com");
@@ -105,7 +114,7 @@ namespace Server
 
                    // IPEndPoint ipep = (IPEndPoint) ep2;
 
-                    TCPConfig remoteAddress = new TCPConfig(dnsHost, ipAddr, port);
+
                     var msg = t.getMessage(client.GetStream());
                     //  MsgEventArgs msgArgs = new MsgEventArgs(msg, t.getRemoteAddress());
                     //Msg(this, msgArgs);
