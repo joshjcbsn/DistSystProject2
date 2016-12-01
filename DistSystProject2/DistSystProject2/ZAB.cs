@@ -309,7 +309,7 @@ namespace Server
             }
         }
 
-        private void ExecuteHistory(object sender, MsgEventArgs e)
+        private void ExecuteHistory()
         {
             using (FileStream fHistory = new FileStream("history.txt", FileMode.OpenOrCreate, FileAccess.Read))
             {
@@ -323,7 +323,7 @@ namespace Server
                         Proposal thisProp = new Proposal(args[2], new zxid(Convert.ToInt32(args[0]), Convert.ToInt32(args[1])));
                         if (thisProp.z > lastId)
                         {
-                            ProposalHandler(thisProp, sender, e.client);
+                            ProposalHandler(thisProp, this, thisAddress);
                         }
                     }
                 }
@@ -747,42 +747,43 @@ namespace Server
             }
             proposals[prop].Add(e.client);
             Console.WriteLine("got ack {0}", proposals[prop].Count);
+            /*
             if (proposals[prop].Count > (followers.Count / 2))
             {
                 Commit(sender, e);
 
-            }
+            }*/
         }
 
-        public void Commit(object sender, MsgEventArgs e)
+        public void Commit(Proposal prop)
         {
-            Deliver(sender, e);
+            Deliver(prop);
             foreach (int f in followers)
             {
-                sendMessage(String.Format("commit {0}", e.data), servers[f]);
+                sendMessage(String.Format("commit {0}", prop.v), servers[f]);
 
             }
         }
 
-        private void Deliver(object sender, MsgEventArgs e)
+        private void Deliver(Proposal prop)
         {
             char[] space = {' '};
-            string[] args = e.data.Split(space, 2);
+            string[] args = prop.v.Split(space, 2);
             if (args[0] == "create")
             {
                 files.AddFile(args[1]);
-                sendMessage(String.Format("Created file '{0}'", args[1]), e.client);
+               // sendMessage(String.Format("Created file '{0}'", args[1]), e.client);
             }
             else if (args[0] == "append")
             {
                 string[] fileargs = args[1].Split(space, 2);
                 files.AppendFile(fileargs[0], fileargs[1]);
-                sendMessage(String.Format("Appended '{0}' to file '{1}'", fileargs[0], fileargs[1]), e.client);
+                //sendMessage(String.Format("Appended '{0}' to file '{1}'", fileargs[0], fileargs[1]), e.client);
             }
             else if (args[0] == "delete")
             {
                 files.DeleteFile(args[1]);
-                sendMessage(String.Format("Deleted file {0}", args[1]), e.client);
+               // sendMessage(String.Format("Deleted file {0}", args[1]), e.client);
             }
             else if (args[0] == "coordinator")
             {
@@ -792,7 +793,7 @@ namespace Server
             }
             else if (args[0] == "newleader")
             {
-                ExecuteHistory(sender, e);
+                ExecuteHistory();
                 phase = "broadcast";
                 Console.WriteLine("broadcast");
             }
@@ -808,7 +809,7 @@ namespace Server
         {
             Proposal prop = parseProposal(e.data);
             Console.WriteLine("Committing {0}", prop.v);
-            Deliver(sender, e);
+            Deliver(prop);
 
 
             //stage for
