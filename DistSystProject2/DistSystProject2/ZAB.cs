@@ -195,6 +195,8 @@ namespace Server
             if (leader == n)
             {
                 //leader
+                ServerIds.Clear();
+                getZxids();
                 Func<bool> hasZxidQuorum = delegate() { return ServerIds.Count > (followers.Count / 2); };
                 SpinWait.SpinUntil(hasZxidQuorum);
                 var e1 = epoch + 1;
@@ -221,14 +223,15 @@ namespace Server
 
 
             }
-
+/*
             else
             {
+                //sendMessage(String.Format("zxid {0} {1} {2}", n, epoch, counter), servers[leader]);
                 //var currentEpoch = epoch;
                 Func<bool> waitforSync = delegate () { return phase != "discover"; };
                 SpinWait.SpinUntil(waitforSync);
                 Sync();
-            }
+            }*/
 
 
         }
