@@ -76,6 +76,8 @@ namespace Server
             thisNode.SendHistory += new OnMsgHandler(OnSendHistory);
             thisNode.GetZxid += new OnMsgHandler(OnGetZxid);
             thisNode.Zxid += new OnMsgHandler(OnZxid);
+
+            recvCoord = false;
            // thisNode.getConnections();
             Task socket = Task.Factory.StartNew(() => thisNode.getConnections());
             ServerIds = new Dictionary<int, zxid>();
@@ -609,6 +611,7 @@ namespace Server
         /// <param name="e"></param>
         private bool OnCoordinator(object sender, MsgEventArgs e)
         {
+            recvCoord = true;
             Console.WriteLine("coordinator");
             response = true;
             var s = Convert.ToInt32(e.data);
