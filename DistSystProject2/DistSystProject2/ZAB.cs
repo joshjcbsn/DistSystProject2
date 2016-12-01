@@ -84,7 +84,7 @@ namespace Server
             Thread.Sleep(3000);
             getZxids();
 
-            holdElection();
+            //holdElection();
 
 
 

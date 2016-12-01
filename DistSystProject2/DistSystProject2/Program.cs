@@ -57,6 +57,7 @@ namespace Server
             try
             {
                 ZAB zk = new ZAB(n, tcpConfig);
+                zk.holdElection();
             }
             catch (Exception ex)
             {
