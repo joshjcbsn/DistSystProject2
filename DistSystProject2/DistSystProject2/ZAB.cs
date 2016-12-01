@@ -698,7 +698,7 @@ namespace Server
             Console.WriteLine("Epoch {0}", Convert.ToInt32(args[0]));
             response = true;
             Console.WriteLine("test");
-            if (Convert.ToInt32(args[0]) == epoch)
+            if (Convert.ToInt32(args[0]) >= epoch)
             {
                 leader = Convert.ToInt32(args[1]);
                 sendMessage("gethistory", servers[leader]);
