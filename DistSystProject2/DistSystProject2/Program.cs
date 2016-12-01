@@ -60,7 +60,7 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine("sendMessage {0} {1}",ex.Message,ex.StackTrace);
+                Console.WriteLine("ZAB {0} {1}",ex.Message,ex.StackTrace);
 
             }
           //  Console.Read();
