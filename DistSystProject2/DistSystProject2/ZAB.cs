@@ -474,19 +474,26 @@ namespace Server
 
         private void getZxids()
         {
-            ServerIds.Remove(n);
-            ServerIds.Add(n, new zxid(epoch, counter));
-            foreach (int s in servers.Keys)
+            try
             {
-                if (s != n)
+                ServerIds.Remove(n);
+                ServerIds.Add(n, new zxid(epoch, counter));
+                foreach (int s in servers.Keys)
                 {
-                    ServerIds.Remove(s);
-                    sendMessage("getzxid",servers[s]);
-                }
+                    if (s != n)
+                    {
+                        ServerIds.Remove(s);
+                        sendMessage("getzxid", servers[s]);
+                    }
 
+                }
+                Func<bool> hasIds = delegate() { return ServerIds.Count == servers.Count; };
+                SpinWait.SpinUntil(hasIds, 5000);
             }
-            Func<bool> hasIds = delegate() { return ServerIds.Count == servers.Count; };
-            SpinWait.SpinUntil(hasIds, 5000);
+            catch (Exception ex)
+            {
+                Console.WriteLine("getZxids {0} {1}",ex.Message,ex.StackTrace);
+            }
         }
 
         private void OnGetZxid(object sender, MsgEventArgs e)
