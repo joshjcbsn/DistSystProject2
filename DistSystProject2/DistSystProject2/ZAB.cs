@@ -126,50 +126,55 @@ namespace Server
             Console.WriteLine("waiting");
             Func<bool> hasAck = delegate() { return (proposals[election].Count == servers.Count); };
             SpinWait.SpinUntil(hasAck, 5000);
-            Console.WriteLine("waited");
-            if (proposals[election].Count == 1)
+            if (phase == "election")
             {
-                leader = n;
-                Proposal coordinator = new Proposal(String.Format("coordinator {0}", n), new zxid(epoch, counter));
-                proposals.Remove(coordinator);
-                proposals.Add(coordinator, new List<TCPConfig>());
-                proposals[coordinator].Add(thisAddress);
-                foreach (int s in ServerIds.Keys)
+                Console.WriteLine("waited");
+                if (proposals[election].Count == 1)
                 {
-                    if ((ServerIds[s] < ServerIds[n]) ||
-                        (ServerIds[s] == ServerIds[n] && s < n))
+                    leader = n;
+                    Proposal coordinator = new Proposal(String.Format("coordinator {0}", n), new zxid(epoch, counter));
+                    proposals.Remove(coordinator);
+                    proposals.Add(coordinator, new List<TCPConfig>());
+                    proposals[coordinator].Add(thisAddress);
+                    foreach (int s in ServerIds.Keys)
                     {
-                        followers.Add(s);
-                        Console.WriteLine("test1");
-                        sendProposal(coordinator,servers[s]);
+                        if ((ServerIds[s] < ServerIds[n]) ||
+                            (ServerIds[s] == ServerIds[n] && s < n))
+                        {
+                            followers.Add(s);
+                            Console.WriteLine("test1");
+                            sendProposal(coordinator,servers[s]);
+                        }
                     }
-                }
 
-                Discover();
-                //end election
-                //Proposal discover = new Proposal("discover", new);
-              //  sendBroadcast();
-
-            }
-            else
-            {
-                response = false;
-                Func<bool> hasCoord = delegate() { return response; };
-                SpinWait.SpinUntil(hasCoord, 5000);
-                //OnCoordinator handles changes if coord message is recieved
-                if (!(response))
-                {
-                    proposals.Remove(election);
-                    holdElection();
+                    Discover();
+                    //end election
+                    //Proposal discover = new Proposal("discover", new);
+                    //  sendBroadcast();
                 }
-/*
                 else
                 {
-                    var currentEpoch = epoch;
-                    Func<bool> waitforDiscover = delegate () { return phase == "discover"; };
-                    SpinWait.SpinUntil(waitforDiscover);
-                }*/
+                    response = false;
+                    Func<bool> hasCoord = delegate() { return response; };
+                    SpinWait.SpinUntil(hasCoord, 5000);
+                    //OnCoordinator handles changes if coord message is recieved
+                    if (!(response))
+                    {
+                        proposals.Remove(election);
+                        holdElection();
+                    }
+/*
+                                    else
+                                    {
+                                        var currentEpoch = epoch;
+                                        Func<bool> waitforDiscover = delegate () { return phase == "discover"; };
+                                        SpinWait.SpinUntil(waitforDiscover);
+                                    }*/
+                }
+
+
             }
+
         }
         /// <summary>
         /// Replays proposals stored on disk, then searches for any additional missing proposals
