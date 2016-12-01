@@ -258,6 +258,7 @@ namespace Server
                 }
                 Func<bool> isLeader = delegate() { return proposals[newlead].Count > (ServerIds.Count / 2); };
                 SpinWait.SpinUntil(isLeader);
+                Console.WriteLine("is leader");
                // epoch++;
 
             }
