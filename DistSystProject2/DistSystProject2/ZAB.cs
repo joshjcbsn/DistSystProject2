@@ -541,6 +541,7 @@ namespace Server
             string[] args = e.data.Split(space);
 
             ServerIds.Add(Convert.ToInt32(args[0]), new zxid(Convert.ToInt32(args[1]), Convert.ToInt32(args[2])));
+            thisNode.getConnections();
 
         }
 
@@ -691,6 +692,7 @@ namespace Server
                 //    sendAck(e);
                     phase = "sync";
                     Sync();
+                    thisNode.getConnections();
                     return true;
                     //go to sync
                 }
@@ -720,6 +722,7 @@ namespace Server
             {
                 leader = Convert.ToInt32(args[1]);
                 sendMessage("gethistory", servers[leader]);
+                thisNode.getConnections();
                 return true;
             }
             holdElection();
