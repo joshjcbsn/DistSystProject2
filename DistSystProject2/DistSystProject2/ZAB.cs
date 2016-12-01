@@ -806,6 +806,7 @@ namespace Server
                 ExecuteHistory();
                 phase = "broadcast";
                 Console.WriteLine("broadcast");
+                thisNode.getConnections();
             }
 
         }
