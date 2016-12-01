@@ -413,10 +413,14 @@ namespace Server
         {
 
             Proposal prop = parseProposal(e.data);
-            if (ProposalHandler(prop, sender, e.client))
+            if (prop.z.epoch == epoch)
             {
-                sendAck(e);
+                if (ProposalHandler(prop, sender, e.client))
+                {
+                    sendAck(e);
+                }
             }
+
 
 
 
