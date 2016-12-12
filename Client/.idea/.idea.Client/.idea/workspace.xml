@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0305668-7e3e-43b4-a715-d2af6f484ded" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Client/bin/Debug/Client.exe" afterPath="$PROJECT_DIR$/../../Client/bin/Debug/Client.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Client/bin/Debug/Client.exe.mdb" afterPath="$PROJECT_DIR$/../../Client/bin/Debug/Client.exe.mdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Client/obj/Debug/Client.exe" afterPath="$PROJECT_DIR$/../../Client/obj/Debug/Client.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Client/obj/Debug/Client.exe.mdb" afterPath="$PROJECT_DIR$/../../Client/obj/Debug/Client.exe.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Client/Connection.cs" afterPath="$PROJECT_DIR$/../../Client/Connection.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../DistSystProject2/.idea/.idea.Server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../../DistSystProject2/.idea/.idea.Server/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../DistSystProject2/DistSystProject2/Node.cs" afterPath="$PROJECT_DIR$/../../../DistSystProject2/DistSystProject2/Node.cs" />
     </list>
     <ignored path="Client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../Client/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+            <state relative-caret-position="218">
+              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
               <folding>
                 <marker date="1480447799599" expanded="true" signature="6:132" ph="..." />
                 <marker date="1480447799599" expanded="true" signature="150:2098" ph="{...}" />
@@ -50,22 +45,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connection.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Connection.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Client/Connection.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding>
-                <marker date="1480616153228" expanded="true" signature="6:91" ph="..." />
-                <marker date="1480616153228" expanded="true" signature="109:2120" ph="{...}" />
-                <marker date="1480616153228" expanded="true" signature="139:1836" ph="{...}" />
-                <marker date="1480616153228" expanded="true" signature="263:561" ph="{...}" />
-                <marker date="1480616153228" expanded="true" signature="592:730" ph="{...}" />
-                <marker date="1480616153228" expanded="true" signature="775:1204" ph="{...}" />
-                <marker date="1480616153228" expanded="true" signature="1239:1601" ph="{...}" />
-                <marker date="1480616153228" expanded="true" signature="1713:1830" ph="{...}" />
-                <marker date="1480616153228" expanded="true" signature="1963:2118" ph="{...}" />
-                <marker date="1480616153228" expanded="true" signature="2066:2112" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="6:150" ph="..." />
+                <marker date="1480617173016" expanded="true" signature="168:3037" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="198:2753" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="359:1478" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="586:790" ph="/* byte[] buffer = Encoding.GetEncoding(&quot;UTF-8&quot;).GetBytes(&quot;{\&quot;channels\&quot;: [\&quot;\&quot;], \&quot;data\&quot;: { \&quot;alert\&quot;: \&quot; &quot; + m ... */" />
+                <marker date="1480617173016" expanded="true" signature="1053:1185" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="1509:1647" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="1692:2121" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="2156:2518" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="2630:2747" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="2880:3035" ph="{...}" />
+                <marker date="1480617173016" expanded="true" signature="2983:3029" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -218,6 +215,7 @@
       <workItem from="1480486423213" duration="2000" />
       <workItem from="1480566896090" duration="1460000" />
       <workItem from="1480616093866" duration="72000" />
+      <workItem from="1480616657813" duration="1302000" />
     </task>
     <task id="LOCAL-00001" summary="made client">
       <created>1480447841216</created>
@@ -237,7 +235,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7165000" />
+    <option name="totallyTimeSpent" value="8467000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -252,27 +250,27 @@
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32958803" sideWeight="0.5074918" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.49250814" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18827361" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32958803" sideWeight="0.5074918" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.49250814" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -310,16 +308,81 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480616153228" expanded="true" signature="6:91" ph="..." />
-            <marker date="1480616153228" expanded="true" signature="109:2120" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="139:1836" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="263:561" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="592:730" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="775:1204" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1239:1601" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1713:1830" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1963:2118" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="2066:2112" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="6:150" ph="..." />
+            <marker date="1480617173016" expanded="true" signature="168:3037" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="198:2753" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="359:1478" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="586:790" ph="/* byte[] buffer = Encoding.GetEncoding(&quot;UTF-8&quot;).GetBytes(&quot;{\&quot;channels\&quot;: [\&quot;\&quot;], \&quot;data\&quot;: { \&quot;alert\&quot;: \&quot; &quot; + m ... */" />
+            <marker date="1480617173016" expanded="true" signature="1053:1185" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1509:1647" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1692:2121" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2156:2518" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2630:2747" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2880:3035" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2983:3029" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/TCP.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+          <folding>
+            <marker date="1480568140906" expanded="true" signature="6:195" ph="..." />
+            <marker date="1480568140906" expanded="true" signature="229:2421" ph="{...}" />
+            <marker date="1480568140906" expanded="true" signature="257:277" ph="{...}" />
+            <marker date="1480568140906" expanded="true" signature="287:513" ph="/// Reads message. Blocks calling thread until the message has been read ... " />
+            <marker date="1480568140906" expanded="true" signature="564:1497" ph="{...}" />
+            <marker date="1480568140906" expanded="true" signature="1507:1685" ph="/// Sends TCP message to address specified in config  ... " />
+            <marker date="1480568140906" expanded="true" signature="1747:2415" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/packages.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding>
+            <marker date="1480447799599" expanded="true" signature="6:132" ph="..." />
+            <marker date="1480447799599" expanded="true" signature="150:2098" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="180:694" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="319:405" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="471:570" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="636:688" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="712:2096" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="758:2090" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="781:843" ph="/* create connection to server ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/Connection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1480617173016" expanded="true" signature="6:150" ph="..." />
+            <marker date="1480617173016" expanded="true" signature="168:3037" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="198:2753" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="359:1478" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="586:790" ph="/* byte[] buffer = Encoding.GetEncoding(&quot;UTF-8&quot;).GetBytes(&quot;{\&quot;channels\&quot;: [\&quot;\&quot;], \&quot;data\&quot;: { \&quot;alert\&quot;: \&quot; &quot; + m ... */" />
+            <marker date="1480617173016" expanded="true" signature="1053:1185" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1509:1647" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1692:2121" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2156:2518" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2630:2747" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2880:3035" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2983:3029" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -371,16 +434,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480616153228" expanded="true" signature="6:91" ph="..." />
-            <marker date="1480616153228" expanded="true" signature="109:2120" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="139:1836" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="263:561" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="592:730" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="775:1204" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1239:1601" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1713:1830" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1963:2118" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="2066:2112" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="6:150" ph="..." />
+            <marker date="1480617173016" expanded="true" signature="168:3037" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="198:2753" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="359:1478" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="586:790" ph="/* byte[] buffer = Encoding.GetEncoding(&quot;UTF-8&quot;).GetBytes(&quot;{\&quot;channels\&quot;: [\&quot;\&quot;], \&quot;data\&quot;: { \&quot;alert\&quot;: \&quot; &quot; + m ... */" />
+            <marker date="1480617173016" expanded="true" signature="1053:1185" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1509:1647" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1692:2121" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2156:2518" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2630:2747" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2880:3035" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2983:3029" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -432,16 +497,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480616153228" expanded="true" signature="6:91" ph="..." />
-            <marker date="1480616153228" expanded="true" signature="109:2120" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="139:1836" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="263:561" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="592:730" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="775:1204" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1239:1601" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1713:1830" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1963:2118" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="2066:2112" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="6:150" ph="..." />
+            <marker date="1480617173016" expanded="true" signature="168:3037" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="198:2753" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="359:1478" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="586:790" ph="/* byte[] buffer = Encoding.GetEncoding(&quot;UTF-8&quot;).GetBytes(&quot;{\&quot;channels\&quot;: [\&quot;\&quot;], \&quot;data\&quot;: { \&quot;alert\&quot;: \&quot; &quot; + m ... */" />
+            <marker date="1480617173016" expanded="true" signature="1053:1185" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1509:1647" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1692:2121" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2156:2518" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2630:2747" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2880:3035" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2983:3029" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -493,16 +560,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480616153228" expanded="true" signature="6:91" ph="..." />
-            <marker date="1480616153228" expanded="true" signature="109:2120" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="139:1836" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="263:561" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="592:730" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="775:1204" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1239:1601" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1713:1830" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1963:2118" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="2066:2112" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="6:150" ph="..." />
+            <marker date="1480617173016" expanded="true" signature="168:3037" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="198:2753" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="359:1478" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="586:790" ph="/* byte[] buffer = Encoding.GetEncoding(&quot;UTF-8&quot;).GetBytes(&quot;{\&quot;channels\&quot;: [\&quot;\&quot;], \&quot;data\&quot;: { \&quot;alert\&quot;: \&quot; &quot; + m ... */" />
+            <marker date="1480617173016" expanded="true" signature="1053:1185" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1509:1647" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1692:2121" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2156:2518" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2630:2747" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2880:3035" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2983:3029" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -554,16 +623,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480616153228" expanded="true" signature="6:91" ph="..." />
-            <marker date="1480616153228" expanded="true" signature="109:2120" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="139:1836" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="263:561" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="592:730" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="775:1204" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1239:1601" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1713:1830" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1963:2118" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="2066:2112" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="6:150" ph="..." />
+            <marker date="1480617173016" expanded="true" signature="168:3037" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="198:2753" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="359:1478" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="586:790" ph="/* byte[] buffer = Encoding.GetEncoding(&quot;UTF-8&quot;).GetBytes(&quot;{\&quot;channels\&quot;: [\&quot;\&quot;], \&quot;data\&quot;: { \&quot;alert\&quot;: \&quot; &quot; + m ... */" />
+            <marker date="1480617173016" expanded="true" signature="1053:1185" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1509:1647" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1692:2121" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2156:2518" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2630:2747" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2880:3035" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2983:3029" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -702,24 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Client/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
-          <folding>
-            <marker date="1480447799599" expanded="true" signature="6:132" ph="..." />
-            <marker date="1480447799599" expanded="true" signature="150:2098" ph="{...}" />
-            <marker date="1480447799599" expanded="true" signature="180:694" ph="{...}" />
-            <marker date="1480447799599" expanded="true" signature="319:405" ph="{...}" />
-            <marker date="1480447799599" expanded="true" signature="471:570" ph="{...}" />
-            <marker date="1480447799599" expanded="true" signature="636:688" ph="{...}" />
-            <marker date="1480447799599" expanded="true" signature="712:2096" ph="{...}" />
-            <marker date="1480447799599" expanded="true" signature="758:2090" ph="{...}" />
-            <marker date="1480447799599" expanded="true" signature="781:843" ph="/* create connection to server ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Client/TCP.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
@@ -739,18 +792,38 @@
     <entry file="file://$PROJECT_DIR$/../../Client/Connection.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
-            <marker date="1480616153228" expanded="true" signature="6:91" ph="..." />
-            <marker date="1480616153228" expanded="true" signature="109:2120" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="139:1836" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="263:561" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="592:730" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="775:1204" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1239:1601" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1713:1830" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="1963:2118" ph="{...}" />
-            <marker date="1480616153228" expanded="true" signature="2066:2112" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="6:150" ph="..." />
+            <marker date="1480617173016" expanded="true" signature="168:3037" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="198:2753" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="359:1478" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="586:790" ph="/* byte[] buffer = Encoding.GetEncoding(&quot;UTF-8&quot;).GetBytes(&quot;{\&quot;channels\&quot;: [\&quot;\&quot;], \&quot;data\&quot;: { \&quot;alert\&quot;: \&quot; &quot; + m ... */" />
+            <marker date="1480617173016" expanded="true" signature="1053:1185" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1509:1647" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="1692:2121" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2156:2518" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2630:2747" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2880:3035" ph="{...}" />
+            <marker date="1480617173016" expanded="true" signature="2983:3029" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Client/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <marker date="1480447799599" expanded="true" signature="6:132" ph="..." />
+            <marker date="1480447799599" expanded="true" signature="150:2098" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="180:694" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="319:405" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="471:570" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="636:688" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="712:2096" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="758:2090" ph="{...}" />
+            <marker date="1480447799599" expanded="true" signature="781:843" ph="/* create connection to server ... */" />
           </folding>
         </state>
       </provider>

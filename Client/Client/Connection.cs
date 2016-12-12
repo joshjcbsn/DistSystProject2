@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Net.Sockets;
+using System.Text;
 
 namespace Client
 {
@@ -9,8 +12,25 @@ namespace Client
     {
         public TCPConfig remoteAddress;
         public TcpListener listener;
+        public string publicAddress;
         public Connection(TCPConfig tcp)
         {
+            var dnsRequest = WebRequest.Create("http://169.254.169.254/latest/meta-data/public-hostname");
+            //dnsRequest.ContentType = "application/json";
+            dnsRequest.Method = "POST";
+          //  byte[] buffer = Encoding.GetEncoding("UTF-8").GetBytes("{\"channels\": [\"\"], \"data\": { \"alert\": \" " + messaggio + "\" } }");
+            //string result = System.Convert.ToBase64String(buffer);
+            Stream reqstr = dnsRequest.GetRequestStream();
+           // reqstr.Write(buffer, 0, buffer.Length);
+            byte[] buffer;
+            reqstr.Write();
+            reqstr.Close();
+            var requestContent = new FormUrlEncodedContent(new [] {
+                new KeyValuePair<string, string>("text", "http://169.254.169.254/latest/meta-data/public-hostname"),
+            });
+
+
+
             remoteAddress = tcp;
             try
             {

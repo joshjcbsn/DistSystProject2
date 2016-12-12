@@ -554,15 +554,14 @@ namespace Server
         /// <param name="e"></param>
         private void OnCreate(object sender, MsgEventArgs e)
         {
-            if (phase != "election")
+            if (phase == "broadcast")
             {
 
 
 
                 if (leader == n)
                 {
-                    counter++;
-                    Proposal create =  sendBroadcast(String.Format("create {0}", e.data));
+                    Proposal create = sendBroadcast(String.Format("create {0}", e.data));
 
                 }
                 else
@@ -571,8 +570,36 @@ namespace Server
 
                     sendMessage(String.Format("create {0}", e.data), servers[leader]);
 
-
-
+                    UnlockFile(e.data);
+                    try
+                    {
+                        using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
+                        {
+                            TCP t = new TCP();
+                            //send response to client
+                            t.sendTcpMessage(String.Format("Created file {0}", e.data), client.GetStream());
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
+                    {
+                        TCP t = new TCP();
+                        //send response
+                        t.sendTcpMessage(String.Format("Not in broadcast phase, couldn't create file {0}", e.data),client.GetStream());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
 
@@ -593,6 +620,51 @@ namespace Server
         /// <param name="e"></param>
         private void OnDelete(object sender, MsgEventArgs e)
         {
+            if (phase == "broadcast")
+            {
+                if (leader == n)
+                {
+                    Proposal delete = sendBroadcast(String.Format("create {0}", e.data));
+
+                }
+                else
+                {
+                    LockFile(e.data);
+
+                    sendMessage(String.Format("delete {0}", e.data), servers[leader]);
+
+                    UnlockFile(e.data);
+                    try
+                    {
+                        using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
+                        {
+                            TCP t = new TCP();
+                            //send responese to client
+                            t.sendTcpMessage(String.Format("Deleted file {0}", e.data), client.GetStream());
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
+                    {
+                        TCP t = new TCP();
+                        //send message to client
+                        t.sendTcpMessage(String.Format("Not in broadcast phase, couldn't delete file {0}", e.data),client.GetStream());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
 
         /// <summary>
@@ -608,6 +680,7 @@ namespace Server
                 using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
                 {
                     TCP t = new TCP();
+                    //send file content to client
                     t.sendTcpMessage(files.ReadFile(e.data),client.GetStream());
                 }
             }
@@ -625,7 +698,59 @@ namespace Server
         /// <param name="e"></param>
         private void OnAppend(object sender, MsgEventArgs e)
         {
-            counter++;
+            char[] space = {' '};
+            var args = e.data.Split(space, 2);
+            var filename = args[0];
+            var line = args[1];
+            if (phase == "broadcast")
+            {
+
+
+
+                if (leader == n)
+                {
+                    Proposal append = sendBroadcast(String.Format("create {0}", e.data));
+
+                }
+                else
+                {
+
+                    LockFile(e.data);
+
+                    sendMessage(String.Format("append {0} {1}", filename, line), servers[leader]);
+
+                    UnlockFile(e.data);
+                    try
+                    {
+                        using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
+                        {
+                            TCP t = new TCP();
+                            //send response to client
+                            t.sendTcpMessage(String.Format("Append line {0} file {1}", line, filename), client.GetStream());
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    using (TcpClient client = new TcpClient(e.client.dns, e.client.port))
+                    {
+                        TCP t = new TCP();
+                        //send response
+                        t.sendTcpMessage(String.Format("Not in broadcast phase, couldn't append file {0}", e.data),client.GetStream());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
 
         /// <summary>
